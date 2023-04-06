@@ -43,6 +43,10 @@ body{
   pointer-events: none;
 }
 
+.logo-img{
+  width: 100px
+}
+
 @media(max-width: 990px){
   .center .slick-center .project{
     transform: scale(1);

@@ -13,14 +13,20 @@ const ProfComponent = () => {
           <h4>
             Hello <span className="green">I'am</span>
           </h4>
-          <h1 className="green">Milad Amiri</h1>
-          <h3>UX/UI Designer and graphic designer</h3>
+          <h1 className="green">SHUJA UR REHMAN</h1>
+          <h3>MERN STACK DEVELOPER</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            iusto. Adipisci in qui officia provident tenetur sequi, deserunt
-            corporis quos?
+            As a Mern Stack developer, I have expertise in designing and developing responsive, user-friendly websites using modern web technologies. With a keen eye for detail and a passion for creating seamless user experiences, I have honed my skills in front-end development, back-end development, and web application development.
+           </p> <br/>
+            <p>
+            With my excellent problem-solving skills, I am able to diagnose and fix complex web-related issues quickly and efficiently. I am also comfortable working with cross-functional teams and stakeholders to gather requirements and deliver high-quality projects on time and within budget.
+          </p> <br/>
+          <p>
+          As a web developer, I am passionate about staying up-to-date with the latest web development trends and technologies and constantly strive to enhance my skills to deliver cutting-edge web solutions that meet and exceed client expectations.
           </p>
+          <a href="#footer">
           <button>Let's talk</button>
+          </a>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">

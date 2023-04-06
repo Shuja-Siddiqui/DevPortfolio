@@ -6,10 +6,11 @@ const Header = () => {
     const [bar, setBar] = useState(false);
   return (
     <Container bar={bar}>
-        <Logo>
-            <span className='green'><GiCandleFlame/></span>
-            <h1>Portfolio</h1>
-        </Logo>
+        {/* <Logo> */}
+        <a href='#home'>
+           <img className='logo-img' src={require("../../assets/img/logo.png")} alt=""/>
+           </a>
+        {/* </Logo> */}
         <Nav bar={bar}>
             <span><a href="#home">Home</a></span>
             <span><a href="#service">Services</a></span>
