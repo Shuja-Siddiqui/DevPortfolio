@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { GiEarthAmerica } from "react-icons/gi";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
 
 const ProfComponent = () => {
@@ -37,7 +37,7 @@ const ProfComponent = () => {
               </span>
               <span>
                 <a href="/">
-                  <GiEarthAmerica />
+                  <FaGithub />
                 </a>
               </span>
               <span>
@@ -52,7 +52,8 @@ const ProfComponent = () => {
       <Slide direction="right">
         <Profile>
           <img
-            src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
+            // src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
+            src={require("../../assets/img/shujaPic.png")}
             alt="profile"
           />
         </Profile>
