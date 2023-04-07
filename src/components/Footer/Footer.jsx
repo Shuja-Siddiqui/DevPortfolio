@@ -7,6 +7,7 @@ import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
 import { BsFacebook, BsSlack } from "react-icons/bs";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
+import { footerData } from "../Banner/array";
 
 const Footer = () => {
   const scrollUp = () => {
@@ -19,14 +20,14 @@ const Footer = () => {
     <Container id="footer">
       <Profile>
         <Slide direction="left" delay={1}>
-          <h1>Portfolio</h1>
+          <h1><img className="footer-logo-img" src={require("../../assets/img/logo.png")} alt="profile"/>SHUJA UR REHMAN</h1>
         </Slide>
         <div className="address">
           <Slide direction="left">
             <h1>Address:</h1>
           </Slide>
           <Slide direction="left">
-            <p>1030 Southwood Dr San Luis Obispo, California(CA), 93401</p>
+            <p>{footerData.address}</p>
           </Slide>
         </div>
         <div className="links">
@@ -38,7 +39,7 @@ const Footer = () => {
               <FiPhoneCall />
             </span>
             <Slide direction="left">
-              <a href="tel:+4733378901">+47 333 78 901</a>
+              <a href="tel:+923314559519">{footerData.phoneNo}</a>
             </Slide>
           </div>
           <div>
@@ -48,7 +49,7 @@ const Footer = () => {
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:miladamiri@gmail.com">miladamiri@gmail.com</a>
+              <a href="mailto:shuja0094@gmail.com">{footerData.email}</a>
             </Slide>
           </div>
         </div>
