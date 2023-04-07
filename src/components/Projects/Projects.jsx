@@ -4,12 +4,16 @@ import SliderComp from './Slider';
 import { Zoom } from 'react-awesome-reveal';
 
 const Projects = () => {
+
+    const content = {
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque voluptate excepturi porro sed totam quis animi dolorum rerum earum."
+    };
+
   return (
     <Container id='project'>
         <Zoom>
             <h1>Recent <span className="green">Projects</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque 
-            voluptate excepturi porro sed totam quis animi dolorum rerum earum.</p>
+            <p>{content.text}</p>
         </Zoom>
         <Slide>
             <SliderComp/>
