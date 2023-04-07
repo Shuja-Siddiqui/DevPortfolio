@@ -1,10 +1,11 @@
 import React from "react";
-import { MdDesignServices } from "react-icons/md";
+// import { MdDesignServices } from "react-icons/md";
 import { FiCodesandbox } from "react-icons/fi";
 import { CgWebsite } from "react-icons/cg";
 import styled from "styled-components";
 import Card from "./Card";
 import { Slide } from "react-awesome-reveal";
+import { serviceData } from "../Banner/array";
 
 const Services = () => {
   return (
@@ -16,30 +17,15 @@ const Services = () => {
         <h1>What I Do</h1>
       </Slide>
       <Cards>
-        <Slide direction="left">
+      {serviceData.map((i,index) => (
+        <Slide direction={i.direction}>
           <Card
-            Icon={MdDesignServices}
-            title={"ui/ux designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            Icon={i.icon}
+            title={i.title}
+            disc={i.disc}
           />
         </Slide>
-        <Slide direction="up">
-          <Card
-            Icon={FiCodesandbox}
-            title={"graphic designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
-          />
-        </Slide>
-        <Slide direction="right">
-          <Card
-            Icon={CgWebsite}
-            title={"web designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
-          />
-        </Slide>
+      ))}
       </Cards>
     </Container>
   );

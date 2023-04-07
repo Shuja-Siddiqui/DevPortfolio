@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { GiEarthAmerica } from "react-icons/gi";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
+import { info } from "./array";
 
 const ProfComponent = () => {
   return (
@@ -13,16 +11,10 @@ const ProfComponent = () => {
           <h4>
             Hello <span className="green">I'am</span>
           </h4>
-          <h1 className="green">SHUJA UR REHMAN</h1>
-          <h3>MERN STACK DEVELOPER</h3>
+          <h1 className="green">{info.name}</h1>
+          <h3>{info.feild}</h3>
           <p>
-            As a Mern Stack developer, I have expertise in designing and developing responsive, user-friendly websites using modern web technologies. With a keen eye for detail and a passion for creating seamless user experiences, I have honed my skills in front-end development, back-end development, and web application development.
-           </p> <br/>
-            <p>
-            With my excellent problem-solving skills, I am able to diagnose and fix complex web-related issues quickly and efficiently. I am also comfortable working with cross-functional teams and stakeholders to gather requirements and deliver high-quality projects on time and within budget.
-          </p> <br/>
-          <p>
-          As a web developer, I am passionate about staying up-to-date with the latest web development trends and technologies and constantly strive to enhance my skills to deliver cutting-edge web solutions that meet and exceed client expectations.
+            {info.about}
           </p>
           <a href="#footer">
           <button>Let's talk</button>
@@ -32,17 +24,17 @@ const ProfComponent = () => {
             <div className="social-icons">
               <span>
                 <a href="/">
-                  <AiOutlineInstagram />
+                  {info.insta}
                 </a>
               </span>
               <span>
                 <a href="/">
-                  <FaGithub />
+                  {info.github}
                 </a>
               </span>
               <span>
                 <a href="/">
-                  <FaLinkedinIn />
+                  {info.linkedin}
                 </a>
               </span>
             </div>
@@ -53,7 +45,7 @@ const ProfComponent = () => {
         <Profile>
           <img
             // src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
-            src={require("../../assets/img/logo.png")}
+            src={info.image}
             alt="profile"
           />
         </Profile>
