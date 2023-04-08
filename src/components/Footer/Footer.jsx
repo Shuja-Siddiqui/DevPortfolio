@@ -61,28 +61,21 @@ const Footer = () => {
             <Zoom>
               <span>
                 <a href="/">
-                  <AiFillGithub />
+                  {footerData.github}
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
                 <a href="/">
-                  <AiFillLinkedin />
+                  {footerData.linkedin}
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
                 <a href="/">
-                  <BsFacebook />
-                </a>
-              </span>
-            </Zoom>
-            <Zoom>
-              <span>
-                <a href="/">
-                  <BsSlack />
+                  {footerData.facebook}
                 </a>
               </span>
             </Zoom>

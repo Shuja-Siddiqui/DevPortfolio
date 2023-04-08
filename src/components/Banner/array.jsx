@@ -1,9 +1,11 @@
 
-import { AiOutlineInstagram } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin,AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdDesignServices } from "react-icons/md";
 import { FiCodesandbox } from "react-icons/fi";
 import { CgWebsite } from "react-icons/cg";
+import { BsFacebook } from "react-icons/bs";
+
 
 export const info = {
         id: 1,
@@ -56,4 +58,7 @@ export const footerData ={
         address: "174-k, Tulip-Ext, Park View City, Lahore, Pakistan",
         phoneNo: "+923314559519",
         email: "shuja0094@gmail.com",
+        github: <AiFillGithub />,
+        linkedin: <AiFillLinkedin />,
+        facebook: <BsFacebook />,
     };
