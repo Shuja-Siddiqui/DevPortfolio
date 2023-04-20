@@ -1,5 +1,5 @@
 
-import { AiFillGithub, AiFillLinkedin,AiOutlineInstagram } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin,AiOutlineInstagram,AiFillSkype } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdDesignServices } from "react-icons/md";
 import { FiCodesandbox } from "react-icons/fi";
@@ -61,4 +61,5 @@ export const footerData ={
         github: <AiFillGithub />,
         linkedin: <AiFillLinkedin />,
         facebook: <BsFacebook />,
+        skype: <AiFillSkype/>,
     };

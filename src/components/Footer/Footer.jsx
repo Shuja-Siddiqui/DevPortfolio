@@ -79,6 +79,13 @@ const Footer = () => {
                 </a>
               </span>
             </Zoom>
+            <Zoom>
+              <span>
+                <a href="/">
+                  {footerData.skype}
+                </a>
+              </span>
+            </Zoom>
           </div>
         </div>
         <Fade>
