@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Slide } from "react-awesome-reveal";
 import { info } from "./array";
 
-const ProfComponent = () => {
+const ProfComponent = ({data}) => {
   return (
     <Container id="home">
       <Slide direction="left">
@@ -11,10 +11,10 @@ const ProfComponent = () => {
           <h4>
             Hello <span className="green">I'am</span>
           </h4>
-          <h1 className="green">{info.name}</h1>
-          <h3>{info.feild}</h3>
+          <h1 className="green">{data?.name}</h1>
+          <h3>{data?.feild}</h3>
           <p>
-            {info.about}
+            {data?.about}
           </p>
           <a href="#footer">
           <button>Let's talk</button>

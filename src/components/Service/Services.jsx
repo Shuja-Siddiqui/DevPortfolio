@@ -1,13 +1,10 @@
 import React from "react";
-// import { MdDesignServices } from "react-icons/md";
-import { FiCodesandbox } from "react-icons/fi";
-import { CgWebsite } from "react-icons/cg";
 import styled from "styled-components";
 import Card from "./Card";
 import { Slide } from "react-awesome-reveal";
-import { serviceData } from "../Banner/array";
+import { MdDesignServices } from "react-icons/md";
 
-const Services = () => {
+const Services = ({data}) => {
   return (
     <Container id="service">
       <Slide direction="down">
@@ -17,12 +14,12 @@ const Services = () => {
         <h1>What I Do</h1>
       </Slide>
       <Cards>
-      {serviceData.map((i,index) => (
-        <Slide direction={i.direction}>
+      {data && data.map((i,index) => (
+        <Slide direction="left" key={index}>
           <Card
-            Icon={i.icon}
-            title={i.title}
-            disc={i.disc}
+            Icon={MdDesignServices}
+            title={i.name}
+            disc={i.description}
           />
         </Slide>
       ))}
