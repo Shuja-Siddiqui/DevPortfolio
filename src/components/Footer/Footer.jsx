@@ -4,30 +4,37 @@ import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
-import { BsFacebook, BsSlack } from "react-icons/bs";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
 import { footerData } from "../Banner/array";
 
-const Footer = () => {
+const Footer = ({ data }) => {
   const scrollUp = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
   };
+
   return (
     <Container id="footer">
       <Profile>
         <Slide direction="left" delay={1}>
-          <h1><img className="footer-logo-img" src={require("../../assets/img/logo.png")} alt="profile"/>SHUJA UR REHMAN</h1>
+          <h1>
+            <img
+              className="footer-logo-img"
+              src={require("../../assets/img/logo.png")}
+              alt="profile"
+            />
+            SHUJA UR REHMAN
+          </h1>
         </Slide>
         <div className="address">
           <Slide direction="left">
             <h1>Address:</h1>
           </Slide>
           <Slide direction="left">
-            <p>{footerData.address}</p>
+            <p>{data?.address}</p>
           </Slide>
         </div>
         <div className="links">
@@ -39,7 +46,7 @@ const Footer = () => {
               <FiPhoneCall />
             </span>
             <Slide direction="left">
-              <a href="tel:+923314559519">{footerData.phoneNo}</a>
+              <a href={`tel:${data?.phone}`}>{data?.phone}</a>
             </Slide>
           </div>
           <div>
@@ -49,7 +56,7 @@ const Footer = () => {
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:shuja0094@gmail.com">{footerData.email}</a>
+              <a href={`mailto:${data?.email}`}>{data?.email}</a>
             </Slide>
           </div>
         </div>
@@ -60,30 +67,22 @@ const Footer = () => {
           <div className="icons">
             <Zoom>
               <span>
-                <a href="/">
-                  {footerData.github}
-                </a>
+                <a href="/">{footerData.github}</a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
-                  {footerData.linkedin}
-                </a>
+                <a href="/">{footerData.linkedin}</a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
-                  {footerData.facebook}
-                </a>
+                <a href="/">{footerData.facebook}</a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
-                  {footerData.skype}
-                </a>
+                <a href="/">{footerData.skype}</a>
               </span>
             </Zoom>
           </div>

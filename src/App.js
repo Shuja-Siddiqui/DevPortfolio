@@ -32,20 +32,21 @@ function App() {
     getPortfolio();
   }, []);
 
+  console.log("All info for portfolio", data);
 
   return (
     <Container>
       <Banner>
         <Header />
-        <ProfComponent data={data?.developer_info}/>
+        <ProfComponent data={data?.developer_info} />
       </Banner>
-      <Services data={data?.service}/>
+      <Services data={data?.service} />
       <LightColor>
         <Projects data={data?.project} />
       </LightColor>
-      <Clients />
+      <Clients data={data?.testimonial} />
       <LightColor>
-        <Footer />
+        <Footer data={data?.developer_info} />
       </LightColor>
     </Container>
   );

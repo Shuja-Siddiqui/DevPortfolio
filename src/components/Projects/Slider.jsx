@@ -69,10 +69,8 @@ var settings = {
 };
 const SliderComp = ({ data1 }) => {
   const arrowRef = useRef(null);
-  let sliderProject = "";
-  sliderProject = data1 && data1.map((item, i) => {
-    item.img =
-      "https://res.cloudinary.com/ghazni/image/upload/v1661324074/Yt-portfolio/ui4_jku3ol.png";
+
+  let sliderProject = data1?.map((item, i) => {
     return <Project item={item} key={i} />;
   });
   return (
