@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import Project from "./Project";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // let data1 = [
 //   {
@@ -28,22 +30,22 @@ import styled from "styled-components";
 // ];
 
 var settings = {
-  className: "center",
-  centerMode: true,
-  dots: false,
+  className: "left",
+  centerMode: false,
+  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
   initialSlide: 0,
-  arrows: false,
+  arrows: true,
   responsive: [
     {
       breakpoint: 990,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: true,
+        infinite: false,
         dots: false,
         centerMode: false,
       },
@@ -78,14 +80,6 @@ const SliderComp = ({ data1 }) => {
       <Slider ref={arrowRef} {...settings}>
         {sliderProject}
       </Slider>
-      <Buttons>
-        <button onClick={() => arrowRef.current.slickPrev()} className="back">
-          <IoIosArrowBack />
-        </button>
-        <button onClick={() => arrowRef.current.slickNext()} className="next">
-          <IoIosArrowForward />
-        </button>
-      </Buttons>
     </Container>
   );
 };

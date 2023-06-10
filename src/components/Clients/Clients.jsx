@@ -12,7 +12,7 @@ let clients = [
     img_url:
       "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
     stars: 3,
-    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
   },
   {
@@ -21,7 +21,7 @@ let clients = [
     img_url:
       "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
     stars: 4,
-    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
   },
   {
@@ -30,7 +30,7 @@ let clients = [
     img_url:
       "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
     stars: 5,
-    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
   },
   {
@@ -39,13 +39,13 @@ let clients = [
     img_url:
       "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
     stars: 5,
-    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
   },
 ];
 var settings = {
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -57,7 +57,7 @@ var settings = {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-        infinite: true,
+        infinite: false,
         dots: true,
       },
     },
@@ -191,3 +191,40 @@ const Buttons = styled.div`
     display: none;
   }
 `;
+
+// import React from "react";
+// import OwlCarousel from "react-owl-carousel";
+// import "owl.carousel/dist/assets/owl.carousel.css";
+// import "owl.carousel/dist/assets/owl.theme.default.css";
+
+// const Clients = () => {
+//   const options = {
+//     items: 3,
+//     // Add any other options you want to customize the carousel
+//   };
+
+//   return (
+//     <OwlCarousel className="owl-theme" {...options}>
+//       <div className="item">
+//         <h4>1</h4>
+//       </div>
+//       <div className="item">
+//         <h4>2</h4>
+//       </div>
+//       <div className="item">
+//         <h4>3</h4>
+//       </div>
+//       <div className="item">
+//         <h4>4</h4>
+//       </div>
+//       <div className="item">
+//         <h4>5</h4>
+//       </div>
+//       <div className="item">
+//         <h4>6</h4>
+//       </div>
+//     </OwlCarousel>
+//   );
+// };
+
+// export default Clients;
