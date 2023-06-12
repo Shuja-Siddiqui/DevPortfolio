@@ -7,7 +7,7 @@ import { getImageRequest } from "../../api";
 const ProfComponent = ({ data }) => {
   return (
     <Container id="home">
-      <Slide direction="left">
+      <Slide style={{width: "100%"}} direction="left">
         <Texts>
           <h4>
             Hello <span className="green">I'am</span>
