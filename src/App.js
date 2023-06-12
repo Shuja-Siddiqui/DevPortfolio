@@ -32,8 +32,6 @@ function App() {
     getPortfolio();
   }, []);
 
-  console.log("All info for portfolio", data);
-
   return (
     <Container>
       <Banner>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -7,13 +7,35 @@ import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
 import { footerData } from "../Banner/array";
+import { sendEmailRequest } from "../../api";
 
 const Footer = ({ data }) => {
+  const [email, setEmail] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const scrollUp = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  const handleSendEmail = async () => {
+    const emailData = {
+      name: email.name,
+      email: email.email,
+      message: email.message,
+    };
+
+    const response = await sendEmailRequest(emailData);
+    response?.status === 200 &&
+      setEmail({
+        name: "",
+        email: "",
+        message: "",
+      });
   };
 
   return (
@@ -100,21 +122,44 @@ const Footer = ({ data }) => {
               <span>
                 <CgProfile />
               </span>
-              <input type="text" placeholder="Fullname..." />
+              <input
+                value={email.name}
+                onChange={(e) => setEmail({ ...email, name: e.target.value })}
+                name="name"
+                type="text"
+                placeholder="Fullname..."
+              />
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" placeholder="Email..." />
+              <input
+                name="email"
+                type="email"
+                value={email.email}
+                onChange={(e) => setEmail({ ...email, email: e.target.value })}
+                placeholder="Email..."
+              />
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
+              <textarea
+                name="message"
+                value={email.message}
+                onChange={(e) =>
+                  setEmail({ ...email, message: e.target.value })
+                }
+                cols="30"
+                rows="10"
+                placeholder="Message..."
+              ></textarea>
             </div>
-            <button>Submit</button>
+            <button type="button" onClick={handleSendEmail}>
+              Submit
+            </button>
           </form>
         </Slide>
       </Form>

@@ -5,7 +5,6 @@ import { info } from "./array";
 import { getImageRequest } from "../../api";
 
 const ProfComponent = ({ data }) => {
-  console.log("data for profile is", data);
   return (
     <Container id="home">
       <Slide direction="left">

@@ -80,11 +80,10 @@ var settings = {
 };
 
 const Clients = ({ data }) => {
-  console.log("Testimonial data", data);
   const arrowRef = useRef(null);
   let clientDisc = "";
   clientDisc = data?.map((item, i) => <ClientSlider item={item} key={i} />);
-  console.log("Client Description", clientDisc);
+
   return (
     <Container id="client">
       <Slide direction="left">
@@ -191,40 +190,3 @@ const Buttons = styled.div`
     display: none;
   }
 `;
-
-// import React from "react";
-// import OwlCarousel from "react-owl-carousel";
-// import "owl.carousel/dist/assets/owl.carousel.css";
-// import "owl.carousel/dist/assets/owl.theme.default.css";
-
-// const Clients = () => {
-//   const options = {
-//     items: 3,
-//     // Add any other options you want to customize the carousel
-//   };
-
-//   return (
-//     <OwlCarousel className="owl-theme" {...options}>
-//       <div className="item">
-//         <h4>1</h4>
-//       </div>
-//       <div className="item">
-//         <h4>2</h4>
-//       </div>
-//       <div className="item">
-//         <h4>3</h4>
-//       </div>
-//       <div className="item">
-//         <h4>4</h4>
-//       </div>
-//       <div className="item">
-//         <h4>5</h4>
-//       </div>
-//       <div className="item">
-//         <h4>6</h4>
-//       </div>
-//     </OwlCarousel>
-//   );
-// };
-
-// export default Clients;

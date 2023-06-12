@@ -5,7 +5,7 @@ import { Zoom } from "react-awesome-reveal";
 
 const Projects = ({ data }) => {
   const content = {
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque voluptate excepturi porro sed totam quis animi dolorum rerum earum.",
+    text: "My portfolio showcases recent projects that demonstrate my expertise in design and development. From e-commerce website redesigns to mobile app development, brand identity creation, and UX/UI design, my work reflects my commitment to delivering high-quality solutions with exceptional user experiences.",
   };
 
   return (
