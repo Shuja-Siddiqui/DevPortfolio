@@ -23,14 +23,20 @@ const ProfComponent = ({ data }) => {
             <p>Check out my</p>
             <div className="social-icons">
               <span>
-                <a href={data?.links?.find((link) => link.title === "insta")?.path}>
+                <a
+                  href={
+                    data?.links?.find((link) => link.title === "insta")?.path
+                  }
+                >
                   {info.insta}
                 </a>
               </span>
               <span>
                 <a
                   target="blank"
-                  href={data?.links?.find((link) => link.title === "github")?.path}
+                  href={
+                    data?.links?.find((link) => link.title === "github")?.path
+                  }
                 >
                   {info.github}
                 </a>
@@ -38,7 +44,9 @@ const ProfComponent = ({ data }) => {
               <span>
                 <a
                   target="blank"
-                  href={data?.links?.find((link) => link.title === "linkedIn")?.path}
+                  href={
+                    data?.links?.find((link) => link.title === "linkedIn")?.path
+                  }
                 >
                   {info.linkedin}
                 </a>
@@ -48,13 +56,15 @@ const ProfComponent = ({ data }) => {
         </Texts>
       </Slide>
       <Slide direction="right">
-        <Profile>
-          <img
-            // src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
-            src={getImageRequest(data?.image)}
-            alt="profile"
-          />
-        </Profile>
+        {data?.image && (
+          <Profile>
+            <img
+              // src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
+              src={getImageRequest(data?.image)}
+              alt="profile"
+            />
+          </Profile>
+        )}
       </Slide>
     </Container>
   );
