@@ -7,7 +7,7 @@ import { getImageRequest } from "../../api";
 const ProfComponent = ({ data }) => {
   return (
     <Container id="home">
-      <Slide style={{width: "100%"}} direction="left">
+      <Slide style={{ width: "100%" }} direction="left">
         <Texts>
           <h4>
             Hello <span className="green">I'am</span>
@@ -21,35 +21,59 @@ const ProfComponent = ({ data }) => {
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
-              <span>
-                <a
-                  href={
-                    data?.links?.find((link) => link.title === "insta")?.path
-                  }
-                >
-                  {info.insta}
-                </a>
-              </span>
-              <span>
-                <a
-                  target="blank"
-                  href={
-                    data?.links?.find((link) => link.title === "github")?.path
-                  }
-                >
-                  {info.github}
-                </a>
-              </span>
-              <span>
-                <a
-                  target="blank"
-                  href={
-                    data?.links?.find((link) => link.title === "linkedIn")?.path
-                  }
-                >
-                  {info.linkedin}
-                </a>
-              </span>
+               {data?.links?.find((link) => link.title === "stackoverflow") && (
+                <span>
+                  <a
+                    target="blank"
+                    href={
+                      data?.links?.find((link) => link.title === "stackoverflow")
+                        ?.path
+                    }
+                  >
+                    {info.stackoverflow}
+                  </a>
+                </span>
+              )}
+              {data?.links?.find((link) => link.title === "instagaram") && (
+                <span>
+                  <a
+                    target="blank"
+                    href={
+                      data?.links?.find((link) => link.title === "instagaram")
+                        ?.path
+                    }
+                  >
+                    {info.insta}
+                  </a>
+                </span>
+              )}
+
+              {data?.links?.find((link) => link.title === "github") && (
+                <span>
+                  <a
+                    target="blank"
+                    href={
+                      data?.links?.find((link) => link.title === "github")?.path
+                    }
+                  >
+                    {info.github}
+                  </a>
+                </span>
+              )}
+
+              {data?.links?.find((link) => link.title === "linkedIn") && (
+                <span>
+                  <a
+                    target="blank"
+                    href={
+                      data?.links?.find((link) => link.title === "linkedIn")
+                        ?.path
+                    }
+                  >
+                    {info.linkedin}
+                  </a>
+                </span>
+              )}
             </div>
           </Social>
         </Texts>

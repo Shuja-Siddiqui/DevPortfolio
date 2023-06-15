@@ -32,8 +32,6 @@ function App() {
     getPortfolio();
   }, []);
 
-  console.log("Whole data is", data);
-
   return (
     <Container>
       <Banner>
