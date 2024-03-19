@@ -3,21 +3,20 @@ import { Doughnut } from "../../charts";
 
 export const SkillsCarousal = ({ direction, parentClick }) => {
   const [slidePosition, setSlidePosition] = useState(0);
-  const [directions, setDirections] = useState(direction);
 
-  const handleSlide = () => {
-    // Calculate the new slide position based on the direction
+  const handleSlide = (direction) => {
     const newSlidePosition =
-      direction === "left" ? slidePosition - 200 : slidePosition + 200;
+      direction === "left" ? slidePosition - 240 : slidePosition + 240;
 
-    // Update the slide position within the bounds of the carousel
-    setSlidePosition(Math.min(Math.max(newSlidePosition, 0), 600)); // Adjusted based on the total width of slides
-
-    // You can adjust the value 200 based on the width of your carousel items
+    setSlidePosition(Math.min(Math.max(newSlidePosition, 0), 900));
   };
+
   useEffect(() => {
-    handleSlide();
-  }, [directions]);
+    if (direction) {
+      handleSlide(direction);
+      parentClick("");
+    }
+  }, [direction, parentClick]);
   return (
     <div className="carousel w-full overflow-hidden relative ease-in-out duration-300">
       <div
@@ -109,15 +108,15 @@ export const SkillsCarousal = ({ direction, parentClick }) => {
         </div>
       </div>
 
-      <div className=" flex lg:hidden  justify-center gap-5 items-center w-full  absolute bottom-0">
+      <div className="  flex lg:hidden  justify-center gap-5 items-center w-full  absolute bottom-0">
         <button
-          onClick={() => setDirections("left")}
+          onClick={() => handleSlide("left")}
           className="btn btn-circle bg-transparent  border-secondary "
         >
           ❮
         </button>
         <button
-          onClick={() => setDirections("right")}
+          onClick={() => handleSlide("right")}
           className="btn btn-circle bg-transparent  border-secondary "
         >
           ❯

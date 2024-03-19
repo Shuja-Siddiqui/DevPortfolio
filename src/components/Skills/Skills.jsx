@@ -18,21 +18,24 @@ export const Skills = () => {
         I design products that are more than pretty. I make them shippable and
         usable, tempor non mollit dolor et do aute
       </p>
-      <div className="absolute hidden lg:flex  justify-between items-center w-full top-16">
-        <button
-          onClick={() => handleClick("left")}
-          className="btn btn-circle bg-transparent  border-white"
-        >
-          ❮
-        </button>
-        <button
-          onClick={() => handleClick("right")}
-          className="btn btn-circle bg-transparent  border-white"
-        >
-          ❯
-        </button>
+      <div className=" absolute w-[50%] right-0">
+        <div className="absolute hidden lg:flex  justify-end pr-3 gap-8 items-center w-full top-16">
+          <button
+            onClick={() => handleClick("left")}
+            className="btn btn-circle bg-transparent  border-night-black"
+          >
+            ❮
+          </button>
+          <button
+            onClick={() => handleClick("right")}
+            className="btn btn-circle bg-transparent  border-night-black"
+          >
+            ❯
+          </button>
+        </div>
       </div>
-      <SkillsCarousal direction={direction} onClick={handleClick} />
+
+      <SkillsCarousal direction={direction} parentClick={handleClick} />
     </div>
   );
 };

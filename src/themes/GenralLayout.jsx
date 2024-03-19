@@ -8,9 +8,11 @@ import {
 import { CenterContent } from "../pages";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useLocation } from "react-router-dom";
+import { useData } from "../DataContext";
 
 export const GeneralLayout = () => {
   const [address, setAddress] = useState("");
+  const { data } = useData();
   const location = useLocation();
   // use theme from local storage if available or set light theme
   const [theme, setTheme] = useState(

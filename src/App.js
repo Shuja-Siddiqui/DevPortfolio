@@ -1,44 +1,36 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { GeneralLayout } from "./themes/GenralLayout";
+import React, { useEffect } from "react";
 import { BackgroundImage, MobileNav } from "./components";
-import { Routes, Route, useParams, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { CustomCursor } from "./themes/CustomCursor";
+import { useData } from "./DataContext";
+import { GeneralLayout } from "./themes/GenralLayout";
 function App() {
-  const [data, setData] = useState(null);
-  const [id, setId] = useState(null);
+  const { data } = useData();
   const location = useLocation();
-  const BASE_URL =
-    process.env === "local" ? "localhost:5000/api/v1/developer" : "/";
-  const getPortfolio = async () => {
-    console.log(id);
-    const res = await fetch(
-      `http://192.168.0.104:5000/api/v1/developer/${id}`,
-      { method: "GET" }
-    ).then((res) => res.json());
-    setData(res);
-  };
+  const id = location.pathname.split("/").pop();
 
   useEffect(() => {
+    const getPortfolio = async () => {
+      try {
+        const res = await fetch(
+          `http://192.168.0.104:5000/api/v1/developer/${id}`,
+          { method: "GET" }
+        );
+        const dev = await res.json();
+        console.log(dev)
+        data(dev);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
     if (id) {
-      // Check if id is not empty before fetching
       getPortfolio();
     }
-  }, [id]); // Added id as a dependency
-
-  useEffect(() => {
-    setId(location.pathname.split("/").pop());
-  }, []);
-
-  useEffect(() => {
-    const cursor = document.getElementById("custom-cursor");
-    document.addEventListener("mousemove", (e) => {
-      cursor.style.left = e.pageX + "px";
-      cursor.style.top = e.pageY + "px";
-    });
-  }, []);
+  }, [id]);
+  console.log(data);
   return (
-    <div className=" w-full  h-screen bg-primaryLight dark:bg-[#191923]">
+    <div className="w-full h-screen bg-primaryLight dark:bg-[#191923]">
       <div className="w-full lg:hidden bg-transparent min-h-[70px] fixed top-0 z-50">
         <MobileNav />
       </div>
