@@ -1,2 +1,2 @@
-export * from "./ExperienceList";
-export * from "./WorkExperience";
+export * from "./EducationList";
+export * from "./Education";
