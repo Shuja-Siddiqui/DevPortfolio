@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import client1 from "../../../assets/img/article1.png";
 import client2 from "../../../assets/img/article2.png";
+import { useData } from "../../../DataContext";
 
 const ratings = [
   {
@@ -43,28 +44,30 @@ export const RatingCarousal = () => {
 
   const goToPreviousSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? ratings.length - 1 : prevIndex - 1
+      prevIndex === 0 ? data?.testimonials?.length - 1 : prevIndex - 1
     );
   };
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === ratings.length - 1 ? 0 : prevIndex + 1
+      prevIndex === data?.testimonials?.length - 1 ? 0 : prevIndex + 1
     );
   };
-
+  const {data} =useData();
+  
+  const baseURL = process.env.REACT_APP_URL;
   return (
     <div className="w-full relative">
       <div className="overflow-hidden w-full relative">
         <div
           className={`flex transition-transform duration-500 ease-in-out bg-transparent justify-center items-center py-4 px-8 ${
-            ratings.length * 50
-          }% md:${ratings.length * 25}%`}
+            data?.testimonials?.length * 50
+          }% md:${data?.testimonials?.length * 25}%`}
           style={{
             transform: `translateX(-${currentIndex * 50}%)`,
           }}
         >
-          {ratings.map((rating, index) => (
+          {data?.testimonials?.map((rating, index) => (
             <div
               key={index}
               className="flex flex-col items-center justify-center space-x-4 p-7"
@@ -73,7 +76,7 @@ export const RatingCarousal = () => {
               <div
                 className="w-[100px] h-[100px] rounded-full"
                 style={{
-                  backgroundImage: `url(${rating.image})`,
+                  backgroundImage: `url(${baseURL}/file/${rating.clientImage})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -86,16 +89,17 @@ export const RatingCarousal = () => {
                     type="radio"
                     name={`rating-${rating.id}`}
                     className="mask mask-star-2 bg-orange-400 "
-                    checked={i < rating.rating}
+                    checked={i < rating.stars}
                     readOnly
                   />
                 ))}
               </div>
               <div className="flex justify-center items-center flex-col gap-3">
-                <h2 className="text-white font-bold">{rating.name}</h2>
-                <p className="text-sm text-primary text-center">{rating.comment}</p>
+                <h2 className="text-white font-bold">{rating.clientName}</h2>
+                <p className="text-sm text-primary text-center">{rating.clientReview
+}</p>
                 <p className="text-sm text-gray-600">
-                  {rating.clientDesignation}
+                  {rating.clientDesignation || 'CEO Consoledot'}
                 </p>
               </div>
             </div>
@@ -118,7 +122,7 @@ export const RatingCarousal = () => {
         </button>
       </div>
       <div className="  inset-x-0 flex  md:hidden justify-center space-x-2">
-        {ratings.map((_, index) => (
+        {data?.testimonials?.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}

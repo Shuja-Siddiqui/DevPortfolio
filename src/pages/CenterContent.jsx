@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Introduce } from "../components/landingPage";
 import {
   AboutMe,
@@ -11,7 +11,9 @@ import {
   ContactMe,
 } from "../components";
 
+
 export const CenterContent = () => {
+ 
   return (
     <div className=" w-full flex justify-start items-start flex-col py-5 xl:py-3 ">
       <div className="w-full bg-primaryDark  rounded-2xl mb-7 ">

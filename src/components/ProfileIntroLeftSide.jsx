@@ -3,6 +3,7 @@ import logo from "../assets/img/user-sidebar-thumb.png";
 import { Doughnut } from "./charts";
 import { FaDownload } from "react-icons/fa";
 import Typed from "typed.js";
+import { useData } from "../DataContext";
 export const ProfileIntroLeftSide = () => {
   const el = React.useRef(null);
 
@@ -17,6 +18,9 @@ export const ProfileIntroLeftSide = () => {
       typed.destroy();
     };
   }, []);
+  const {data}=useData();
+  const baseURL = process.env.REACT_APP_URL
+  
   return (
     <div className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-3 overflow-hidden relative md:max-w-lg ">
       <div className="absolute z-20 w-[320px] h-[100px] -right-[215px] top-[-50px] bg-[#18191A] overflow-hidden"></div>
@@ -24,15 +28,15 @@ export const ProfileIntroLeftSide = () => {
       <div className="flex  w-full flex-col justify-start items-center gap-3 p-1 pt-12">
         <div className="w-[150px] h-[150px] rounded-full relative border-8 border-night-black">
           <img
-            src={logo}
+            src={`${baseURL}/file/${data?.avatar}`}
             alt="profile"
             className="absolute inset-0 rounded-full overflow-hidden top-0"
           />
         </div>
         <div className="w-full flex justify-start items-center flex-col gap-3 min-h-[50px] mb-5">
-          <h4 className="font-bold">Brown Reddick</h4>
+          <h4 className="font-bold">{data?.name}</h4>
           <div id="typed-strings">
-            <p>
+            {/* <p>
               <i>MERN</i> <strong>Developer</strong>
             </p>
             <p>
@@ -40,7 +44,10 @@ export const ProfileIntroLeftSide = () => {
             </p>
             <p>
               <i>Progressive</i> <strong>Applications</strong>
-            </p>
+            </p> */}
+            {data?.skills.length > 0 && data?.skills?.map((i)=> <p>
+              <strong>{i?.title?.skillName}</strong>
+            </p>)}
           </div>
           <p className="text-secondary" id="typed"></p>
         </div>
@@ -48,21 +55,21 @@ export const ProfileIntroLeftSide = () => {
         <div className=" w-full flex justify-start items-center flex-col  gap-3">
           <div className="w-full flex justify-between items-center gap-2">
             <h6>Residence</h6>
-            <p className="text-primary">Canada</p>
+            <p className="text-primary">{data?.residence}</p>
           </div>
           <div className="w-full flex justify-between items-center gap-2">
             <h6>Residence</h6>
-            <p className="text-primary">Canada</p>
+            <p className="text-primary">{data?.residence}</p>
           </div>
           <div className="w-full flex justify-between items-center gap-2">
             <h6>Residence</h6>
-            <p className="text-primary">Canada</p>
+            <p className="text-primary">{data?.residence}</p>
           </div>
         </div>
         <div className="card w-full bg-[#333] shadow-xl mb-5">
           <div className="card-body">
             <h2 className="card-title">Skills!</h2>
-            <div className="w-full flex justify-center items-center mb-5">
+            {/* <div className="w-full flex justify-center items-center mb-5">
               <Doughnut
                 cutout={"95"}
                 height={"75"}
@@ -84,6 +91,15 @@ export const ProfileIntroLeftSide = () => {
                 skillRate={75}
                 skillName={"Js"}
               />
+            </div> */}
+             <div className="w-full flex justify-center items-center text-center mb-5 overflow-hidden" >
+              {data?.skills?.map((i)=><Doughnut
+                cutout={"95"}
+                height={"75"}
+                width={"75"}
+                skillRate={i?.ratings}
+                skillName={i?.title?.skillName}
+              />)}
             </div>
           </div>
         </div>

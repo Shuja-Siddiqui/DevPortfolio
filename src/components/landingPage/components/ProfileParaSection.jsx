@@ -5,7 +5,10 @@ import { Features } from "./Features";
 import heroImage2 from "../../../assets/img/hero-img-2.png";
 import { Carousel } from "./Carousel";
 import { Heading } from "../../genralComponents";
+import { useData } from "../../../DataContext";
 export const ProfileParaSection = () => {
+  const {data}= useData();
+  const baseURL = process.env.REACT_APP_URL;
   return (
     <div className="w-full">
       <div className="w-full flex justify-start items-center gap-4 mb-9">
@@ -13,11 +16,14 @@ export const ProfileParaSection = () => {
           <div className="w-full flex justify-start items-start flex-col">
             <Heading prefix={"I Craft The"} postfix={"Digital Landscape"} />
             <div className=" flex flex-wrap mb-5 ">
-              <p className="w-full text-primary leading-6 text-sm flex flex-wrap">
+              {/* <p className="w-full text-primary leading-6 text-sm flex flex-wrap">
                 I am a
                 <strong className="text-white"> Frontend Developer </strong>
                 at heart and, i create feautres that are best suited for the job
                 at hand.
+              </p> */}
+                <p className="w-full text-primary leading-6 text-sm flex flex-wrap">
+                {data?.about}
               </p>
             </div>
             <div className="w-full flex justify-start items-start mb-7">

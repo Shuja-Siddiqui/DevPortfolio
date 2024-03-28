@@ -5,20 +5,21 @@ import { CustomCursor } from "./themes/CustomCursor";
 import { useData } from "./DataContext";
 import { GeneralLayout } from "./themes/GenralLayout";
 function App() {
-  const { data } = useData();
+  const { data ,setData } = useData();
   const location = useLocation();
-  const id = location.pathname.split("/").pop();
-
+  // const id = location.pathname.split("/").pop();
+  const url= process.env.REACT_APP_URL;
+  const id= process.env.REACT_APP_ID
   useEffect(() => {
     const getPortfolio = async () => {
       try {
         const res = await fetch(
-          `http://192.168.0.104:5000/api/v1/developer/${id}`,
+          `${url}/developer/${id}`,
           { method: "GET" }
         );
         const dev = await res.json();
-        console.log(dev)
-        data(dev);
+        
+        setData(dev.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -28,7 +29,7 @@ function App() {
       getPortfolio();
     }
   }, [id]);
-  console.log(data);
+console.log(data)
   return (
     <div className="w-full h-screen bg-primaryLight dark:bg-[#191923]">
       <div className="w-full lg:hidden bg-transparent min-h-[70px] fixed top-0 z-50">
@@ -37,8 +38,8 @@ function App() {
       <CustomCursor />
       <BackgroundImage />
       <Routes>
-        <Route path="/:id" element={<GeneralLayout />} />
-        <Route path="/case-study" element={<GeneralLayout />} />
+        <Route path="/" element={<GeneralLayout />} />
+        <Route path="/case-study/:id" element={<GeneralLayout />} />
       </Routes>
     </div>
   );

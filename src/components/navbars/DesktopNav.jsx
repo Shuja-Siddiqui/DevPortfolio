@@ -17,7 +17,7 @@ export const DesktopNav = () => {
     <div className="w-full h-full flex justify-between flex-col items-center gap-4 p-2">
       <div
         className="btn btn-circle  rounded-full border text-white justify-center items-center relative border-night-black"
-        style={{ border: "1px solid  #333" }}
+        style={{ border: "1px solid #333" }}
       >
         <div className="w-full absolute top-[35%] left-4">
           <FaShare />
