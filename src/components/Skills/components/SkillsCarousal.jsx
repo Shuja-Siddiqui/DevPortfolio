@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Doughnut } from "../../charts";
+import { useData } from "../../../DataContext";
 
 export const SkillsCarousal = ({ direction, parentClick }) => {
   const [slidePosition, setSlidePosition] = useState(0);
@@ -17,26 +18,27 @@ export const SkillsCarousal = ({ direction, parentClick }) => {
       parentClick("");
     }
   }, [direction, parentClick]);
+  const {data}= useData();
   return (
     <div className="carousel w-full overflow-hidden relative ease-in-out duration-300">
       <div
-        className="carousel-container flex"
+        className="carousel-container flex w-full justify-around"
         style={{
           transform: `translateX(-${slidePosition}px)`,
           transition: "ease-in-out 1s",
         }}
       >
-        <div id="slide1" className="carousel-item relative w-[20%]">
+       {data?.skills?.map((i)=> <div id="slide1" className="carousel-item relative ">
           <Doughnut
             cutout={"99"}
             width={"150"}
             height={"150"}
             fontSize={"18"}
-            skillRate={50}
-            skillName={"Js"}
+            skillRate={i?.ratings}
+            skillName={i?.title?.skillName}
           />
-        </div>
-        <div id="slide2" className="carousel-item relative w-[20%]">
+        </div>)}
+        {/* <div id="slide2" className="carousel-item relative w-[20%]">
           <Doughnut
             cutout={"99"}
             width={"150"}
@@ -105,7 +107,7 @@ export const SkillsCarousal = ({ direction, parentClick }) => {
             skillRate={50}
             skillName={"Tailwind"}
           />
-        </div>
+        </div> */}
       </div>
 
       <div className="  flex lg:hidden  justify-center gap-5 items-center w-full  absolute bottom-0">

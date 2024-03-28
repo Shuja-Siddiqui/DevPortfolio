@@ -1,4 +1,5 @@
 import React from "react";
+import { useData } from "../../../DataContext";
 const data = [
   {
     name: "Envato Market",
@@ -30,19 +31,21 @@ const data = [
   },
 ];
 export const ExperienceList = () => {
+  const {data} = useData();
+  
   return (
     <div className="">
       <ul className="space-y-5 md:space-y-11 relative md:before:content-[''] md:before:absolute lg:before:left-64 lg:before:border-r lg:before:border-[#3b3b3b] lg:dark:before:border-night-black md:before:h-[calc(100%_-1.5rem)] md:before:top-1/2 md:before:-translate-y-1/2">
-        {data?.map((obj, index) => (
+        {data?.education?.map((obj, index) => (
           <li
             key={index}
             className="p-5 border  rounded-xl relative md:flex max-md:space-y-2 border-[$] dark:border-night-black md:border-0 md:p-0 md:rounded-none"
           >
             <div className="flex items-center justify-between mb-5 md:w-60 md:block md:mb-0 relative">
               <h6 className="text-sm font-medium text-white text-opacity-60 md:text-base md:text-opacity-100">
-                {obj?.name}
+                {obj?.institution}
               </h6>
-              <p className="text-[13px] md:text-sm text-primary">{obj?.date}</p>
+              <p className="text-[13px] md:text-sm text-primary">{`${obj?.timeSpan?.startYear} - ${obj?.timeSpan?.endYear}`}</p>
               {/* Dot positioned on the top of the right border */}
               <div
                 className="before-dot hidden  lg:block"
@@ -78,7 +81,7 @@ export const ExperienceList = () => {
             </div>
             <div className="md:flex-1 lg:pl-12">
               <h4 className="text-xl xl:text-2xl font-medium xl:font-medium leading-7 text-white mb-2.5">
-                {obj?.role}
+                {obj?.major}
               </h4>
               <p className="text-sm text-primary leading-5">
                 {obj?.description}

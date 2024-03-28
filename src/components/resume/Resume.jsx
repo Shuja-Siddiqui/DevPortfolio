@@ -1,5 +1,6 @@
 import React from "react";
 import { WorkExperience } from "./components";
+import { useData } from "../../DataContext";
 const data1 = [
   {
     title: "Work",
@@ -16,10 +17,11 @@ const data1 = [
 ];
 
 export const Resume = () => {
+  const {data} = useData();
   return (
     <div>
-      <WorkExperience data={data1[0]} />
-      <WorkExperience data={data1[1]} />
+      <WorkExperience data={data1[0]} prefix={"Work"} postfix={"Experience"} />
+      <WorkExperience data={data?.education} prefix={"My"} postfix={"Education"}/>
     </div>
   );
 };
