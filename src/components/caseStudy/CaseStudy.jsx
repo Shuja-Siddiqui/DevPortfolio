@@ -12,7 +12,7 @@ export const CaseStudy = () => {
   useEffect(()=>{
     setNewData(data?.data?.projects?.[id])
   },[])
-
+  
   return (
     <div className=" w-full flex justify-start items-start flex-col  p-7 border-night-black bg-primaryDark rounded-xl mb-6">
       <div className="w-full flex justify-start items-start flex-col">
@@ -27,7 +27,7 @@ export const CaseStudy = () => {
           <Stepper />
         </div>
         <div className="w-full">
-          <Technologies />
+          <Technologies data={newData?.technologies}/>
         </div>
       </div>
     </div>

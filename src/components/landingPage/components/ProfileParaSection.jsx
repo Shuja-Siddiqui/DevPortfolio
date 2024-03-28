@@ -9,6 +9,12 @@ import { useData } from "../../../DataContext";
 export const ProfileParaSection = () => {
   const {data}= useData();
   const baseURL = process.env.REACT_APP_URL;
+  const handleButtonClick = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="w-full">
       <div className="w-full flex justify-start items-center gap-4 mb-9">
@@ -30,7 +36,7 @@ export const ProfileParaSection = () => {
               <Features />
               <Features />
             </div>
-            <button className="flex justify-start items-center px-7 py-5 bg-secondary text-white gap-3 uppercase rounded-full ">
+            <button onClick={handleButtonClick} className="flex justify-start items-center px-7 py-5 bg-secondary text-white gap-3 uppercase rounded-full ">
               <span>
                 <IoIosSend />
               </span>

@@ -1,22 +1,7 @@
 import React from "react";
-import { Education } from "./components";
 import { useData } from "../../DataContext";
 import { WorkExperience } from "./components/WorkExperiance";
-const data1 = [
-  {
-    title: "Work",
-    sub: "Experience",
-    description:
-      "I design products that are more than pretty. I make them shippable and usable, tempor non mollit dolor et do aute",
-  },
-  {
-    title: "My",
-    sub: "Education",
-    description:
-      "I design products that are more than pretty. I make them shippable and usable, tempor non mollit dolor et do aute",
-  },
-];
-
+import {Education} from "./components/Education"
 export const Resume = () => {
   const {data} = useData();
   return (

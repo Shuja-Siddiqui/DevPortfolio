@@ -41,7 +41,10 @@ export const GeneralLayout = () => {
   return (
     <div className="w-full flex px-3 xl:px-5 lg:px-3 md:px-3 lg:flex-row flex-col justify-between items-center min-h-screen bg-[#18191A] mt-8 md:mt-0 ">
       {/* Leftmost column */}
-      <div className="w-full lg:mt-4 pt-12  lg:w-[25%] sm:w-[50%] justify-center items-start overflow-y-auto ">
+      <div
+        id="home"
+        className="w-full lg:mt-4 pt-12  lg:w-[25%] sm:w-[50%] justify-center items-start overflow-y-auto "
+      >
         <ProfileIntroLeftSide />
       </div>
 
@@ -52,13 +55,13 @@ export const GeneralLayout = () => {
 
       {/* Rightmost column (conditionally rendered) */}
       <div
-        className="lg:w-auto hidden lg:block h-[550px] rounded-full p-5 lg:max-w-sm"
+        className=" hidden lg:block h-[70vh] rounded-full p-2 lg:max-w-sm"
         style={{ border: "1px solid  #333" }}
       >
         <DesktopNav />
       </div>
-      <div className="absolute right-2 top-5 border-t border-b border-l border-r- rounded-2xl rounded-tr-none rounded-br-none border-night-black p-3">
-        <div>
+      {/* <div className="absolute h-[10vh] right-2 top-5 border-t border-b border-l border-r- rounded-2xl rounded-tr-none rounded-br-none border-night-black p-3">
+        <div >
           <label className="swap swap-rotate w-12 h-12">
             <input type="checkbox" onChange={handleToggle} />
             <SunIcon
@@ -71,7 +74,7 @@ export const GeneralLayout = () => {
             />
           </label>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

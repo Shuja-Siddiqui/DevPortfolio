@@ -45,7 +45,7 @@ export const ProfileIntroLeftSide = () => {
             <p>
               <i>Progressive</i> <strong>Applications</strong>
             </p> */}
-            {data?.skills.length > 0 && data?.skills?.map((i)=> <p>
+            {data?.skills.length > 0 ?? data?.skills?.map((i)=> <p>
               <strong>{i?.title?.skillName}</strong>
             </p>)}
           </div>
@@ -58,12 +58,12 @@ export const ProfileIntroLeftSide = () => {
             <p className="text-primary">{data?.residence}</p>
           </div>
           <div className="w-full flex justify-between items-center gap-2">
-            <h6>Residence</h6>
+            <h6>City</h6>
             <p className="text-primary">{data?.residence}</p>
           </div>
           <div className="w-full flex justify-between items-center gap-2">
-            <h6>Residence</h6>
-            <p className="text-primary">{data?.residence}</p>
+            <h6>Age</h6>
+            <p className="text-primary">{data?.age}</p>
           </div>
         </div>
         <div className="card w-full bg-[#333] shadow-xl mb-5">
@@ -92,11 +92,11 @@ export const ProfileIntroLeftSide = () => {
                 skillName={"Js"}
               />
             </div> */}
-             <div className="w-full flex justify-center items-center text-center mb-5 overflow-hidden" >
+             <div className="w-full grid grid-cols-4 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-3 text-center mb-5 overflow-hidden" >
               {data?.skills?.map((i)=><Doughnut
                 cutout={"95"}
-                height={"75"}
-                width={"75"}
+                height={"50"}
+                width={"50"}
                 skillRate={i?.ratings}
                 skillName={i?.title?.skillName}
               />)}
