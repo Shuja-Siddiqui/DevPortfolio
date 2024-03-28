@@ -32,41 +32,33 @@ export const MobileNav = () => {
               className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow bg-primaryDark rounded-box w-52 absolute right-5 top-7 min-h-screen flex justify-start items-start gap-4 "
             >
               <li>
-                <a href="#resume">Homepage</a>
+                <a href="#home">Home</a>
+              </li>
+              
+              <li>
+                <a href="#about">About Me</a>
               </li>
               <li>
-                <a href="#">Portfolio</a>
+                <a href="#service">Services</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="#skills">Skills</a>
               </li>
               <li>
-                <a href="#">Homepage</a>
+                <a href="#resume">Resume</a>
+              </li>
+              
+              <li>
+                <a href="#projects">Projects</a>
               </li>
               <li>
-                <a href="#">Portfolio</a>
+                <a href="#testimonial">Testimonials</a>
               </li>
+              
               <li>
-                <a href="#">About</a>
+                <a href="#contact">Contact me</a>
               </li>
-              <li>
-                <a href="#">Homepage</a>
-              </li>
-              <li>
-                <a href="#">Portfolio</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Homepage</a>
-              </li>
-              <li>
-                <a href="#">Portfolio</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
+           
             </ul>
           </div>
         </div>

@@ -29,7 +29,6 @@ function App() {
       getPortfolio();
     }
   }, [id]);
-console.log(data)
   return (
     <div className="w-full h-screen bg-primaryLight dark:bg-[#191923]">
       <div className="w-full lg:hidden bg-transparent min-h-[70px] fixed top-0 z-50">

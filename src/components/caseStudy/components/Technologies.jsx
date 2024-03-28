@@ -6,17 +6,18 @@ import js from "../../../assets/img/js.svg";
 import tailwind from "../../../assets/img/tailwind.svg";
 import figma from "../../../assets/img/figma.svg";
 
-export const Technologies = () => {
+export const Technologies = ({data}) => {
+  console.log(data)
   return (
     <div className="w-full flex flex-col gap-5">
       <h1 className="w-full font-bold text-white mb-5">
         Technologies
       </h1>
-      <SkillRatingsSlider skillValue={30} skillName={"HTML"} icon={html} />
-      <SkillRatingsSlider skillValue={40} skillName={"CSS"} icon={css} />
+      {data?.map((i)=><SkillRatingsSlider skillValue={30} skillName={i?.name?.skillName} />)}
+      {/* <SkillRatingsSlider skillValue={40} skillName={"CSS"} icon={css} />
       <SkillRatingsSlider skillValue={50} skillName={"JS"} icon={js} />
       <SkillRatingsSlider skillValue={60} skillName={"TAILWIND"} icon={tailwind} />
-      <SkillRatingsSlider skillValue={70} skillName={"FIGMA"} icon={figma} />
+      <SkillRatingsSlider skillValue={70} skillName={"FIGMA"} icon={figma} /> */}
     </div>
   );
 };
