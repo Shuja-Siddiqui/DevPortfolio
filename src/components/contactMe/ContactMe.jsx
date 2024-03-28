@@ -5,7 +5,7 @@ import { ContactForm } from "./components";
 export const ContactMe = () => {
   return (
     <div className="w-full flex justify-start items-start flex-col p-5">
-      <ButtonWithIcon Icon={IoMailOutline} text={"Cotact"} />
+      <ButtonWithIcon Icon={IoMailOutline} text={"Contact"} />
       <Heading
         prefix={"Contact"}
         postfix={"Me"}
