@@ -20,7 +20,12 @@ export const ProfileIntroLeftSide = () => {
   }, []);
   const {data}=useData();
   const baseURL = process.env.REACT_APP_URL
-  
+  const handleDownload = () => {
+    // Replace 'YOUR_GOOGLE_DRIVE_LINK_HERE' with the sharing link of your PDF file
+    const pdfUrl = 'https://drive.google.com/file/d/1hIDKI2EvHu_LGLe6Jh9XfiafLXzD_Ty1/view?usp=drive_link';
+    // Open the PDF in a new tab for the user to download
+    window.open(pdfUrl, '_blank');
+  };
   return (
     <div className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-3 overflow-hidden relative md:max-w-lg ">
       <div className="absolute z-20 w-[320px] h-[100px] -right-[215px] top-[-50px] bg-[#18191A] overflow-hidden"></div>
@@ -104,7 +109,7 @@ export const ProfileIntroLeftSide = () => {
           </div>
         </div>
 
-        <button className="w-full flex justify-center uppercase items-center bg-secondary py-4 font-bold px-5 rounded-full">
+        <button className="w-full flex justify-center uppercase items-center bg-secondary py-4 font-bold px-5 rounded-full" onClick={handleDownload}>
           <span className="mr-2">Download CV</span>
           <FaDownload className="text-white animate-bounce" />{" "}
           {/* Use the imported icon component */}
