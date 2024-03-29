@@ -4,7 +4,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { ContactForm } from "./components";
 export const ContactMe = () => {
   return (
-    <div className="w-full flex justify-start items-start flex-col p-5">
+    <div className="w-full flex justify-start items-start flex-col px-16 py-5">
       <ButtonWithIcon Icon={IoMailOutline} text={"Contact"} />
       <Heading
         prefix={"Contact"}

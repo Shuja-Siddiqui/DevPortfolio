@@ -11,10 +11,10 @@ export const Skills = () => {
   };
 
   return (
-    <div className="w-full flex justify-start items-start flex-col p-5 relative">
+    <div className="w-full flex justify-start items-start flex-col px-16 py-5 relative">
       <ButtonWithIcon Icon={FaGraduationCap} text={"Skills"} />
       <Heading prefix={"My"} postfix={"Adventages"} />
-      <p className="text-sm text-primary leading-6 mb-5">
+      <p className="text-md text-primary leading-6 mb-5">
         I design products that are more than pretty. I make them shippable and
         usable, tempor non mollit dolor et do aute
       </p>

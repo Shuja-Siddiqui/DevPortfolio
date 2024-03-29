@@ -4,7 +4,7 @@ import { ButtonWithIcon } from "../genralComponents";
 import { AwardsRow, MySkills } from "./components";
 export const AboutMe = () => {
   return (
-    <div className=" w-full flex justify-start items-start flex-col  p-5 border-night-black bg-primaryDark rounded-xl mb-6">
+    <div className=" w-full flex justify-start items-start flex-col  px-8 py-4 border-night-black bg-primaryDark rounded-xl mb-6">
       <div className="w-full flex justify-start items-start flex-col">
         <ButtonWithIcon Icon={FaUserCircle} text={"About ME"} />
         <div className="w-full">

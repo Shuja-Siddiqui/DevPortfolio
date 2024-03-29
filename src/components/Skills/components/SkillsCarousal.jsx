@@ -33,7 +33,7 @@ export const SkillsCarousal = ({ direction, parentClick }) => {
             cutout={"99"}
             width={"150"}
             height={"150"}
-            fontSize={"18"}
+            fontSize={"26"}
             skillRate={i?.ratings}
             skillName={i?.title?.skillName}
           />

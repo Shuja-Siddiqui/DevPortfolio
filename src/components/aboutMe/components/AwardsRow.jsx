@@ -21,7 +21,7 @@ const contactData = [
 export const AwardsRow = () => {
   return (
     <div
-      className="w-full flex  justify-between items-start gap-4 mb-6"
+      className="w-full flex  justify-between items-start gap-4 mb-6 px-8"
       style={{ display: "flex", flexWrap: "wrap" }}
     >
       {contactData.map((data, index) => (
