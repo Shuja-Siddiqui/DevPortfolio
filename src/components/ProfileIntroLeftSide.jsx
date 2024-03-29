@@ -30,7 +30,7 @@ export const ProfileIntroLeftSide = () => {
     window.open(pdfUrl, '_blank');
   };
   return (
-    <div className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-8 overflow-hidden relative md:max-w-lg ">
+    <div className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-4 overflow-hidden relative md:max-w-lg ">
       <div className="absolute z-20 w-[320px] h-[100px] -right-[215px] top-[-50px] bg-[#18191A] overflow-hidden"></div>
       <div className="absolute z-20 w-[320px] h-[50px] right-[40px] top-[-106px] rotate-45  bg-[#18191A]"></div>
       <div className="flex  w-full flex-col justify-start items-center gap-3 p-1 pt-12">
