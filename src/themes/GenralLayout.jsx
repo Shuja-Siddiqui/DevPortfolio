@@ -56,7 +56,7 @@ export const GeneralLayout = () => {
       {/* Rightmost column (conditionally rendered) */}
       <div
         className=" hidden lg:block h-[70vh] rounded-full p-2 lg:max-w-sm"
-        style={{ border: "1px solid  #333" }}
+        style={{ border: "1px solid  #333", zIndex: 100 }}
       >
         <DesktopNav />
       </div>
