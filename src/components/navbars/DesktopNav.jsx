@@ -43,7 +43,7 @@ export const DesktopNav = () => {
           <div
             key={link.id}
             onClick={() => handleButtonClick(link.id)}
-            className="hover:bg-primaryDark p-1 rounded-full cursor-pointer"
+            className="hover:bg-primaryDark hover:text-secondary p-1 rounded-full cursor-pointer"
           >
             <button type="button" className="text-xl p-2">
               {link.Icon}
