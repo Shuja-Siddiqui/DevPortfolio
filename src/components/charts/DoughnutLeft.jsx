@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Chart from "chart.js/auto"; // Import Chart.js
 
-export const Doughnut = ({
+export const DoughnutLeft = ({
   cutout,
   width,
   height,
@@ -94,13 +94,12 @@ export const Doughnut = ({
           className="flex justify-center items-center"
         />
         <p
-          className="absolute top-4 left-4 text-primary"
+          className="absolute top-6 left-4 text-primary"
           style={{
-            fontSize: `${fontSize}px` || "24px",
-            top: fontSize ? "40%" : "",
-            left: fontSize ? "36%" : "",
+            fontSize: `${fontSize}px` || "6px",
+            top: fontSize ? "44%" : "",
+            left: fontSize ? "40%" : "",
             color: fontSize ? "white" : "",
-            font:"bold"
           }}
         >
           {count}%

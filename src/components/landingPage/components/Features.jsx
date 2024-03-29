@@ -6,7 +6,7 @@ export const Features = () => {
       <span>
         <IoIosDoneAll className="text-secondary text-lg" />
       </span>
-      <p className="text-sm text-primary">Available for Work</p>
+      <p className="text-sm text-primary">Available for Work </p>
     </div>
   );
 };
