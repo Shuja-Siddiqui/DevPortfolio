@@ -29,7 +29,7 @@ export const ProfileParaSection = () => {
                 at hand.
               </p> */}
                 <p className="w-full text-primary leading-6 text-sm flex flex-wrap">
-                {data?.about}
+                {data?.intro}
               </p>
             </div>
             <div className="w-full flex justify-start items-start mb-7">
