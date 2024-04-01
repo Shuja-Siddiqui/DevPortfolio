@@ -16,7 +16,7 @@ export const ProfileParaSection = () => {
     }
   };
   return (
-    <div className="w-full p-8">
+    <div className="w-full p-8" id="home">
       <div className="w-full flex justify-between items-center gap-4 mb-9">
         <div className="w-full xl:w-[50%] flex justify-start items-center">
           <div className="w-full flex justify-start items-start flex-col">
