@@ -53,7 +53,7 @@ export const GeneralLayout = () => {
     <div className="w-full gap-8 flex px-3 xl:px-5 lg:px-3 md:px-3 lg:flex-row flex-col justify-between items-start min-h-screen bg-[#18191A] mt-8 md:mt-0 ">
       {/* Leftmost column */}
       <div
-        id="home"
+        
         className="w-full lg:mt-4 pt-12  lg:w-[25%] sm:w-[50%] justify-center items-start overflow-y-auto "
         onWheel={handleSideScroll}
       >
