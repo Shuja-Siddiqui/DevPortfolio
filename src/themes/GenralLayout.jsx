@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   CaseStudy,
   DesktopNav,
@@ -38,25 +38,37 @@ export const GeneralLayout = () => {
   useEffect(() => {
     setAddress(location?.pathname.split("/")[1]);
   }, [location]);
+
+    const centerDivRef = useRef(null);
+    const handleSideScroll = (e) => {
+      e.preventDefault();
+      if (centerDivRef.current) {
+        // Adjust the scroll speed by multiplying e.deltaY by a factor
+        // Increase the multiplier to make the scroll faster
+        const scrollSpeedMultiplier = 4; // Adjust this value as needed
+        centerDivRef.current.scrollTop += e.deltaY * scrollSpeedMultiplier;
+      }
+    }
   return (
     <div className="w-full gap-8 flex px-3 xl:px-5 lg:px-3 md:px-3 lg:flex-row flex-col justify-between items-center min-h-screen bg-[#18191A] mt-8 md:mt-0 ">
       {/* Leftmost column */}
       <div
         id="home"
         className="w-full lg:mt-4 pt-12  lg:w-[25%] sm:w-[50%] justify-center items-start overflow-y-auto "
+        onWheel={handleSideScroll}
       >
         <ProfileIntroLeftSide />
       </div>
 
       {/* Center column */}
-      <div className="w-full lg:w-[69%]  py-14 xl:px-7  px-4  3xl:mr-[23%] flex justify-center z-20 items-start lg:h-screen overflow-y-scroll bg-transparent 3xl:max-w-[900px] xl:ml-[0%]">
+      <div ref={centerDivRef} className="w-full h-full lg:w-[69%]  py-14 xl:px-7  px-4  3xl:mr-[23%] flex justify-center z-20 items-start lg:h-screen overflow-y-scroll bg-transparent 3xl:max-w-[900px] xl:ml-[0%]">
         {address === "case-study" ? <CaseStudy /> : <CenterContent />}
       </div>
 
       {/* Rightmost column (conditionally rendered) */}
       <div
-        className=" hidden lg:block h-[70vh] rounded-full p-2 lg:max-w-sm"
-        style={{ border: "1px solid  #333", zIndex: 100 }}
+        className=" hidden lg:block h-[70vh] rounded-full  lg:max-w-sm"
+        style={{ border: "1px solid  #333", zIndex: 100 }} onWheel={handleSideScroll}
       >
         <DesktopNav />
       </div>
