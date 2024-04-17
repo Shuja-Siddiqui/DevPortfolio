@@ -29,10 +29,10 @@ import { useData } from "../../DataContext";
 export const ServicesSection = () => {
   const {data}=useData();
   return (
-    <div className="w-full flex justify-start items-start flex-col p-5">
+    <div className="w-full flex justify-start items-start flex-col px-16 py-4">
       <ButtonWithIcon Icon={FaShoppingBag} text={"Services"} />
       <Heading prefix={"My"} postfix={"Services"} />
-      <p className="text-sm text-primary leading-6 mb-5">
+      <p className="text-md text-primary leading-6 mb-5">
         I design products that are more than pretty. I make them shippable and
         usable, tempor non mollit dolor et do aute
       </p>

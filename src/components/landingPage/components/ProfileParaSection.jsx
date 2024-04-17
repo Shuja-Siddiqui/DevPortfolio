@@ -16,8 +16,8 @@ export const ProfileParaSection = () => {
     }
   };
   return (
-    <div className="w-full">
-      <div className="w-full flex justify-start items-center gap-4 mb-9">
+    <div className="w-full p-8" id="home">
+      <div className="w-full flex justify-between items-center gap-4 mb-9">
         <div className="w-full xl:w-[50%] flex justify-start items-center">
           <div className="w-full flex justify-start items-start flex-col">
             <Heading prefix={"I Craft The"} postfix={"Digital Landscape"} />
@@ -28,7 +28,7 @@ export const ProfileParaSection = () => {
                 at heart and, i create feautres that are best suited for the job
                 at hand.
               </p> */}
-                <p className="w-full text-primary leading-6 text-sm flex flex-wrap">
+                <p className="w-full text-primary leading-6 text-md flex flex-wrap">
                 {data?.intro}
               </p>
             </div>

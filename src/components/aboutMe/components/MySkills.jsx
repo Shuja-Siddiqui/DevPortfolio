@@ -7,7 +7,7 @@ export const MySkills = () => {
   const {data}=useData();
   
   return (
-    <div>
+    <div className="p-8">
       <div className="w-full flex flex-col justify-start items-start mb-5">
         <Heading prefix={"About"} postfix={"Me"} />
         {/* <p className="text-primary text-sm leading-7 tracking-wider">
@@ -17,7 +17,7 @@ export const MySkills = () => {
           for the last ten years designing, programming and operating WordPress
           sites go beyond with exclusive designer
         </p> */}
-        <p className="text-primary text-sm leading-7 tracking-wider">
+        <p className="text-primary text-md leading-7 tracking-wider">
          {data?.about}
         </p>
       </div>

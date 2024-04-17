@@ -33,8 +33,8 @@ export const Carousel = () => {
           <div
             className="slide flex min-w-[100px] items-center justify-center"
             key={index}
-          >
-            {logo}
+          >  {logo}
+         
           </div>
         ))}
         {LOGOS.map((logo, index) => (

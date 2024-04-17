@@ -6,7 +6,7 @@ import { IoChatboxEllipsesOutline } from "react-icons/io5";
 
 export const Testimonial = () => {
   return (
-    <div className="w-full flex justify-start items-start flex-col p-5">
+    <div className="w-full flex justify-start items-start flex-col px-16 py-5">
       <ButtonWithIcon Icon={IoChatboxEllipsesOutline} text={"Testimonial"} />
       <Heading
         prefix={"What"}

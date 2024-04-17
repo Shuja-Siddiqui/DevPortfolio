@@ -33,28 +33,34 @@ export const ContectMe = () => {
     <div className="w-full flex flex-wrap justify-between items-start gap-4">
       <div className="w-full lg:w-[48%] flex justify-between items-start mb-2">
         {/* Each pair of key and value is wrapped inside a container */}
-        <p className="w-full md:w-[50%] text-sm text-primary">Phone No:</p>
-        <p className="w-full md:w-[50%] text-sm text-white">{data?.phoneNo}</p>
+        <p className="w-full md:w-[50%] text-md text-primary">Phone No</p>
+        <p className="w-full md:w-[50%] text-md text-primary">:</p>
+        <p className="w-full md:w-[50%] text-md text-white">{data?.phoneNo}</p>
       </div>
       <div className="w-full lg:w-[48%] flex justify-between items-start mb-2">
         {/* Each pair of key and value is wrapped inside a container */}
-        <p className="w-full md:w-[50%] text-sm text-primary">Skype :</p>
-        <p className="w-full md:w-[50%] text-sm text-white">{data?.skype}</p>
+        <p className="w-full md:w-[50%] text-md text-primary">Skype</p>
+        <p className="w-full md:w-[50%] text-md text-primary">:</p>
+        <p className="w-full md:w-[50%] text-md text-white">{data?.skype}</p>
+      </div>
+      
+      <div className="w-full lg:w-[48%] flex justify-between items-start mb-2">
+        {/* Each pair of key and value is wrapped inside a container */}
+        <p className="w-full md:w-[50%] text-md text-primary">Email</p>
+        <p className="w-full md:w-[50%] text-md text-primary">:</p>
+        <p className="w-full md:w-[50%] text-md text-white">{data?.email}</p>
       </div>
       <div className="w-full lg:w-[48%] flex justify-between items-start mb-2">
         {/* Each pair of key and value is wrapped inside a container */}
-        <p className="w-full md:w-[50%] text-sm text-primary">Language :</p>
-        <div className="w-full md:w-[50%]">{data?.languages?.map((i)=> <span className="w-full md:w-[50%] text-sm text-white">{`${i},`}</span>)}</div>
+        <p className="w-full md:w-[50%] text-md text-primary">Language</p>
+        <p className="w-full md:w-[50%] text-md text-primary">:</p>
+        <div className="w-full md:w-[50%]">{data?.languages?.map((i)=> <span className="w-full md:w-[50%] text-md text-white">{`${i},`}</span>)}</div>
       </div>
       <div className="w-full lg:w-[48%] flex justify-between items-start mb-2">
         {/* Each pair of key and value is wrapped inside a container */}
-        <p className="w-full md:w-[50%] text-sm text-primary">Email :</p>
-        <p className="w-full md:w-[50%] text-sm text-white">{data?.email}</p>
-      </div>
-      <div className="w-full lg:w-[48%] flex justify-between items-start mb-2">
-        {/* Each pair of key and value is wrapped inside a container */}
-        <p className="w-full md:w-[50%] text-sm text-primary">Github :</p>
-        <p className="w-full md:w-[50%] text-sm text-white">{getLink(data?.links)}</p>
+        <p className="w-full md:w-[50%] text-md text-primary">Github</p>
+        <p className="w-full md:w-[50%] text-md text-primary">:</p>
+        <p className="w-full md:w-[50%] text-md text-white">{getLink(data?.links)}</p>
       </div>
     </div>
   );

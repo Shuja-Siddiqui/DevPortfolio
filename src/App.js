@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { CustomCursor } from "./themes/CustomCursor";
 import { useData } from "./DataContext";
 import { GeneralLayout } from "./themes/GenralLayout";
+import { FcDataConfiguration } from "react-icons/fc";
 function App() {
   const { data ,setData } = useData();
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
       getPortfolio();
     }
   }, [id]);
+  console.log(FcDataConfiguration)
   return (
     <div className="w-full h-screen bg-primaryLight dark:bg-[#191923]">
       <div className="w-full lg:hidden bg-transparent min-h-[70px] fixed top-0 z-50">

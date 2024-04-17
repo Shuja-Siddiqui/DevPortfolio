@@ -16,7 +16,7 @@ export const CenterContent = () => {
  
   return (
     <div className=" w-full flex justify-start items-start flex-col py-5 xl:py-3 h-full">
-      <div className="w-full bg-primaryDark  rounded-2xl mb-7 ">
+      <div id="home" className="w-full bg-primaryDark  rounded-2xl mb-7 ">
         <Introduce />
       </div>
       <div id="about" className="w-full bg-primaryDark  rounded-2xl mb-7 ">

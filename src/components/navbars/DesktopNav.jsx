@@ -29,7 +29,7 @@ export const DesktopNav = () => {
   };
 
   return (
-    <div className="w-full h-full flex justify-center flex-col items-center gap-3 p-2">
+    <div className="w-full flex justify-center flex-col items-center gap-3 p-2 rounded-full"  style={{ border: "1px solid  #333" }}>
       <div
         className="btn btn-circle hover:rounded-full border text-white justify-center items-center relative border-night-black"
         style={{ border: "1px solid #333" }}
@@ -38,7 +38,7 @@ export const DesktopNav = () => {
           <FaShare />
         </div>
       </div>
-      <div className="w-full flex flex-col gap-4 items-center h-full justify-between">
+      <div className="w-full flex flex-col gap-8 items-center h-full justify-between">
         {navLinks.map((link) => (
           <div
             key={link.id}
