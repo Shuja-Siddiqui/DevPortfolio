@@ -54,7 +54,7 @@ export const GeneralLayout = () => {
       {/* Leftmost column */}
       <div
         
-        className="w-full lg:mt-4 pt-12  lg:w-[25%] sm:w-[50%] justify-center items-start overflow-y-auto "
+        className="w-full lg:mt-4  lg:w-[25%] sm:w-[50%] justify-center items-start overflow-y-auto "
         onWheel={handleSideScroll}
       >
         <ProfileIntroLeftSide />
@@ -67,7 +67,7 @@ export const GeneralLayout = () => {
 
       {/* Rightmost column (conditionally rendered) */}
       <div
-        className=" lg:block h-full pt-12 lg:mt-4 flex  justify-center items-start  lg:max-w-sm" style={{zIndex:9999}}
+        className=" lg:block h-full lg:mt-4 flex  justify-center items-start  lg:max-w-sm" style={{zIndex:9999}}
         onWheel={handleSideScroll}
       >
         <DesktopNav />

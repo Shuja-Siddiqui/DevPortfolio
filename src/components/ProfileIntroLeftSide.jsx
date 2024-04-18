@@ -30,7 +30,7 @@ export const ProfileIntroLeftSide = () => {
     window.open(pdfUrl, '_blank');
   };
   return (
-    <div className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-4 overflow-hidden relative md:max-w-lg ">
+    <div className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-4 overflow-hidden xl:fixed lg:fixed md:fixed sm:relative xs:relative md:max-w-[21rem]">
       <div className="absolute z-20 w-[320px] h-[100px] -right-[215px] top-[-50px] bg-[#18191A] overflow-hidden"></div>
       <div className="absolute z-20 w-[320px] h-[50px] right-[40px] top-[-106px] rotate-45  bg-[#18191A]"></div>
       <div className="flex  w-full flex-col justify-start items-center gap-3 p-1 pt-12">
@@ -41,7 +41,7 @@ export const ProfileIntroLeftSide = () => {
             className="absolute inset-0 rounded-full overflow-hidden top-0"
           />
         </div>
-        <div className="w-full flex justify-start items-center flex-col gap-3 min-h-[50px] mb-5">
+        <div className="w-full flex justify-start items-center flex-col gap-3 min-h-[50px]">
           <h4 className="font-bold">{data?.name}</h4>
           <div id="typed-strings">
             {/* <p>
@@ -62,21 +62,21 @@ export const ProfileIntroLeftSide = () => {
         <hr className=" w-full" style={{ borderTop: "2px solid #333" }} />
         <div className=" w-full flex justify-start items-center flex-col  gap-3">
           <div className="w-full flex justify-between items-center gap-2 font-bold">
-            <h6>Residence</h6>
-            <p className="text-primary">{data?.residence}</p>
+            <span className="text-sm">Residence</span>
+            <p className="text-primary text-sm">{data?.residence}</p>
           </div>
           <div className="w-full flex justify-between items-center gap-2 font-bold">
-            <h6>City</h6>
-            <p className="text-primary">{data?.residence}</p>
+            <span className="text-sm">City</span>
+            <p className="text-primary text-sm">{data?.residence}</p>
           </div>
           <div className="w-full flex justify-between items-center gap-2 font-bold">
-            <h6>Age</h6>
-            <p className="text-primary">{data?.age}</p>
+            <span className="text-sm">Age</span>
+            <p className="text-primary text-sm">{data?.age}</p>
           </div>
         </div>
         <div className="card w-full bg-[#333] shadow-xl mb-5">
-          <div className="card-body">
-            <h2 className="card-title">Skills!</h2>
+          <div style={{paddingTop: '1rem'}} className="card-body">
+            <h2 style={{fontSize: '0.875rem'}} className="card-title">Skills!</h2>
             {/* <div className="w-full flex justify-center items-center mb-5">
               <Doughnut
                 cutout={"95"}
