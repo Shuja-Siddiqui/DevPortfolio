@@ -38,7 +38,7 @@ export const DesktopNav = () => {
           <FaShare />
         </div>
       </div>
-      <div className="w-full flex flex-col gap-8 items-center h-full justify-between">
+      <div className="w-full flex flex-col gap-4 items-center h-full justify-between">
         {navLinks.map((link) => (
           <div
             key={link.id}
