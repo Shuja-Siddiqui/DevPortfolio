@@ -7,22 +7,22 @@ import { useData } from "../../DataContext";
 export const FeaturedProjects = () => {
   const { data } = useData();
   const baseUrl = process.env.REACT_APP_URL;
-  
+
   // State to manage the number of projects to display
   const [displayedProjects, setDisplayedProjects] = useState(1);
-  
+
   // Handler for displaying more projects
   const handleMoreProjects = () => {
     setDisplayedProjects(data?.projects?.length);
   };
-  
+
   // Handler for displaying fewer projects
   const handleLessProjects = () => {
     setDisplayedProjects(1);
   };
 
   return (
-    <div className="w-full flex justify-start items-start flex-col p-5 border-night-black bg-primaryDark rounded-xl mb-6">
+    <div className="w-full flex justify-start items-start flex-col xl:p-16 lg:p-16 md:p-16 sm:p-5 xs:p-5 xss:p-5 border-night-black bg-primaryDark rounded-xl mb-6">
       <div className="w-full flex justify-start items-start flex-col">
         <ButtonWithIcon Icon={ImStatsBars2} text={"Portfolio"} />
         <Heading

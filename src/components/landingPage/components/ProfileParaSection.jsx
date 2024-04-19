@@ -7,7 +7,7 @@ import { Carousel } from "./Carousel";
 import { Heading } from "../../genralComponents";
 import { useData } from "../../../DataContext";
 export const ProfileParaSection = () => {
-  const {data}= useData();
+  const { data } = useData();
   const baseURL = process.env.REACT_APP_URL;
   const handleButtonClick = () => {
     const section = document.getElementById("contact");
@@ -16,7 +16,10 @@ export const ProfileParaSection = () => {
     }
   };
   return (
-    <div className="w-full p-8" id="home">
+    <div
+      className="w-full xl:p-8 lg:p-8 md:p-8 sm:p-0 xs:p-0 xss:p-0"
+      id="home"
+    >
       <div className="w-full flex justify-between items-center gap-4 mb-9">
         <div className="w-full xl:w-[50%] flex justify-start items-center">
           <div className="w-full flex justify-start items-start flex-col">
@@ -28,7 +31,7 @@ export const ProfileParaSection = () => {
                 at heart and, i create feautres that are best suited for the job
                 at hand.
               </p> */}
-                <p className="w-full text-primary leading-6 text-md flex flex-wrap">
+              <p className="w-full text-primary leading-6 text-md flex flex-wrap">
                 {data?.intro}
               </p>
             </div>
@@ -36,7 +39,10 @@ export const ProfileParaSection = () => {
               <Features />
               <Features />
             </div>
-            <button onClick={handleButtonClick} className="flex justify-start items-center px-7 py-5 bg-secondary text-white gap-3 uppercase rounded-full ">
+            <button
+              onClick={handleButtonClick}
+              className="flex justify-start items-center px-7 py-5 bg-secondary text-white gap-3 uppercase rounded-full "
+            >
               <span>
                 <IoIosSend />
               </span>
