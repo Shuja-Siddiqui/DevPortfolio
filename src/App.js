@@ -33,10 +33,10 @@ function App() {
   console.log(FcDataConfiguration)
   return (
     <div className="w-full h-screen bg-primaryLight dark:bg-[#191923]">
-      <div className="w-full lg:hidden bg-transparent min-h-[70px] fixed top-0 z-50">
+      <div className="w-full lg:hidden flex bg-transparent min-h-[70px] fixed top-0 z-50">
         <MobileNav />
       </div>
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <BackgroundImage />
       <Routes>
         <Route path="/" element={<GeneralLayout />} />

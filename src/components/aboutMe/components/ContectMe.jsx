@@ -54,7 +54,7 @@ export const ContectMe = () => {
         {/* Each pair of key and value is wrapped inside a container */}
         <p className="w-full md:w-[50%] text-md text-primary">Language</p>
         <p className="w-full md:w-[50%] text-md text-primary">:</p>
-        <div className="w-full md:w-[50%]">{data?.languages?.map((i)=> <span className="w-full md:w-[50%] text-md text-white">{`${i},`}</span>)}</div>
+        <div className="w-full md:w-[50%] flex flex-wrap">{data?.languages?.map((i)=> <span className="w-full md:w-[50%] text-md text-white">{`${i},`}</span>)}</div>
       </div>
       <div className="w-full lg:w-[48%] flex justify-between items-start mb-2">
         {/* Each pair of key and value is wrapped inside a container */}

@@ -67,7 +67,7 @@ export const GeneralLayout = () => {
 
       {/* Rightmost column (conditionally rendered) */}
       <div
-        className=" lg:block h-full lg:mt-4 flex  justify-center items-start  lg:max-w-sm" style={{zIndex:9999}}
+        className=" lg:flex hidden h-full lg:mt-4 flex  justify-center items-start  lg:max-w-sm" style={{zIndex:9999}}
         onWheel={handleSideScroll}
       >
         <DesktopNav />

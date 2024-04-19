@@ -11,7 +11,7 @@ export const Skills = () => {
   };
 
   return (
-    <div className="w-full flex justify-start items-start flex-col px-16 py-5 relative">
+    <div className="w-full flex justify-start items-start flex-col xl:px-16 lg:px-16 md:px-16 sm:px-5 xs:px-5 xss:px-5 py-5 relative">
       <ButtonWithIcon Icon={FaGraduationCap} text={"Skills"} />
       <Heading prefix={"My"} postfix={"Adventages"} />
       <p className="text-md text-primary leading-6 mb-5">

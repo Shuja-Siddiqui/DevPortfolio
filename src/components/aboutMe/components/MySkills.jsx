@@ -4,10 +4,10 @@ import { ContectMe } from "./ContectMe";
 import { useData } from "../../../DataContext";
 
 export const MySkills = () => {
-  const {data}=useData();
-  
+  const { data } = useData();
+
   return (
-    <div className="p-8">
+    <div className="xl:p-8 lg:p-8 md:p-8 sm:p-0 xs:p-0 xss:p-0">
       <div className="w-full flex flex-col justify-start items-start mb-5">
         <Heading prefix={"About"} postfix={"Me"} />
         {/* <p className="text-primary text-sm leading-7 tracking-wider">
@@ -18,12 +18,17 @@ export const MySkills = () => {
           sites go beyond with exclusive designer
         </p> */}
         <p className="text-primary text-md leading-7 tracking-wider">
-         {data?.about}
+          {data?.about}
         </p>
       </div>
 
       <div className="w-full flex justify-start items-start flex-col md:flex-row">
-       {data?.skills.map((i)=> <TransparentButton text={i?.title?.skillName} rating={`${i?.ratings}%`} />)}
+        {data?.skills.map((i) => (
+          <TransparentButton
+            text={i?.title?.skillName}
+            rating={`${i?.ratings}%`}
+          />
+        ))}
         {/* <TransparentButton text={"Bootstrap"} rating={"98%"} />
         <TransparentButton text={"TailwindCss"} rating={"98%"} /> */}
       </div>

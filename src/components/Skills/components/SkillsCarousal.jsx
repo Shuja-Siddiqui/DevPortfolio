@@ -18,7 +18,7 @@ export const SkillsCarousal = ({ direction, parentClick }) => {
       parentClick("");
     }
   }, [direction, parentClick]);
-  const {data}= useData();
+  const { data } = useData();
   return (
     <div className="carousel w-full overflow-hidden relative ease-in-out duration-300">
       <div
@@ -28,16 +28,18 @@ export const SkillsCarousal = ({ direction, parentClick }) => {
           transition: "ease-in-out 1s",
         }}
       >
-       {data?.skills?.map((i)=> <div id="slide1" className="carousel-item relative ">
-          <Doughnut
-            cutout={"99"}
-            width={"150"}
-            height={"150"}
-            fontSize={"26"}
-            skillRate={i?.ratings}
-            skillName={i?.title?.skillName}
-          />
-        </div>)}
+        {data?.skills?.map((i) => (
+          <div id="slide1" className="carousel-item relative ">
+            <Doughnut
+              cutout={"99"}
+              width={"150"}
+              height={"150"}
+              fontSize={"26"}
+              skillRate={i?.ratings}
+              skillName={i?.title?.skillName}
+            />
+          </div>
+        ))}
         {/* <div id="slide2" className="carousel-item relative w-[20%]">
           <Doughnut
             cutout={"99"}
