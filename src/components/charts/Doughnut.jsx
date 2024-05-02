@@ -94,19 +94,18 @@ export const Doughnut = ({
           className="flex justify-center items-center"
         />
         <p
-          className="absolute top-4 left-4 text-primary"
+          className="absolute top-4 left-4 text-primary font-extrabold"
           style={{
             fontSize: `${fontSize}px` || "24px",
             top: fontSize ? "40%" : "",
             left: fontSize ? "36%" : "",
-            color: fontSize ? "white" : "",
-            font:"bold"
+            color: fontSize ? "white" : ""
           }}
         >
           {count}%
         </p>
       </div>
-      <h1 style={{ fontSize: fontSize ? `${fontSize}px` : "14px" }}>
+      <h1 style={{ fontSize: "18px", fontWeight: "lighter" }}>
         {skillName}
       </h1>
     </div>

@@ -22,7 +22,7 @@ export const MySkills = () => {
         </p>
       </div>
 
-      <div className="w-full flex justify-start items-start flex-col md:flex-row">
+      <div className="w-full flex gap-4 items-start xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-wrap">
         {data?.skills.map((i) => (
           <TransparentButton
             text={i?.title?.skillName}

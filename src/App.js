@@ -6,21 +6,18 @@ import { useData } from "./DataContext";
 import { GeneralLayout } from "./themes/GenralLayout";
 import { FcDataConfiguration } from "react-icons/fc";
 function App() {
-  const { data ,setData } = useData();
+  const { data, setData } = useData();
   const location = useLocation();
   // const id = location.pathname.split("/").pop();
-  const url= process.env.REACT_APP_URL;
-  const id= process.env.REACT_APP_ID
+  const url = process.env.REACT_APP_URL;
+  const id = process.env.REACT_APP_ID;
   useEffect(() => {
     const getPortfolio = async () => {
       try {
-        const res = await fetch(
-          `${url}/developer/${id}`,
-          { method: "GET" }
-        );
+        const res = await fetch(`${url}/developer/${id}`, { method: "GET" });
         const dev = await res.json();
-        
         setData(dev.data);
+        console.log(data.projects, "lllllllllll");
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -30,7 +27,6 @@ function App() {
       getPortfolio();
     }
   }, [id]);
-  console.log(FcDataConfiguration)
   return (
     <div className="w-full h-screen bg-primaryLight dark:bg-[#191923]">
       <div className="w-full lg:hidden flex bg-transparent min-h-[70px] fixed top-0 z-50">
@@ -39,8 +35,14 @@ function App() {
       {/* <CustomCursor /> */}
       <BackgroundImage />
       <Routes>
-        <Route path="/" element={<GeneralLayout />} />
-        <Route path="/case-study/:id" element={<GeneralLayout />} />
+        <Route
+          path="/"
+          element={<GeneralLayout projectData={data?.projects} />}
+        />
+        <Route
+          path="/case-study/:id"
+          element={<GeneralLayout projectData={data?.projects} />}
+        />
       </Routes>
     </div>
   );

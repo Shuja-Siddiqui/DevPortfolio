@@ -1,23 +1,37 @@
 import React from "react";
 import { SkillRatingsSlider } from "./SkillRatingsSlider";
-import html from "../../../assets/img/html.svg";
-import css from "../../../assets/img/css.svg";
-import js from "../../../assets/img/js.svg";
-import tailwind from "../../../assets/img/tailwind.svg";
-import figma from "../../../assets/img/figma.svg";
 
-export const Technologies = ({data}) => {
-  console.log(data)
+export const Technologies = ({ data }) => {
   return (
     <div className="w-full flex flex-col gap-5">
-      <h1 className="w-full font-bold text-white mb-5">
-        Technologies
-      </h1>
-      {data?.map((i)=><SkillRatingsSlider skillValue={30} skillName={i?.name?.skillName} />)}
-      {/* <SkillRatingsSlider skillValue={40} skillName={"CSS"} icon={css} />
-      <SkillRatingsSlider skillValue={50} skillName={"JS"} icon={js} />
-      <SkillRatingsSlider skillValue={60} skillName={"TAILWIND"} icon={tailwind} />
-      <SkillRatingsSlider skillValue={70} skillName={"FIGMA"} icon={figma} /> */}
+      <h1 className="w-full font-bold text-white mb-5">Technologies</h1>
+      {data?.map((i) => (
+        <SkillRatingsSlider skillValue={30} skillName={i?.name?.skillName} />
+      ))}
     </div>
   );
 };
+
+// import React from "react";
+// import { SkillRatingsSlider } from "./SkillRatingsSlider";
+// import { softwareHouseTechnologies } from "../../../assets/icons/Icons";
+
+// export const Technologies = ({ data }) => {
+//   console.log(data);
+//   return (
+//     <div className="w-full flex flex-col gap-5">
+//     <h1 className="w-full font-bold text-white mb-5">Technologies</h1>
+//     {data?.map((technology) => {
+//       // Find the icon for the current technology
+//       const matchedIcon = softwareHouseTechnologies.find(icon => icon.name.toLowerCase() === technology?.name?.skillName.toLowerCase());
+  
+//       return (
+//         <div key={technology._id} className="flex items-center gap-2">
+//           {matchedIcon && matchedIcon.icon} {/* Render the icon if found */}
+//           <SkillRatingsSlider skillValue={30} skillName={technology?.name?.skillName} />
+//         </div>
+//       );
+//     })}
+//   </div>
+//   );
+// };

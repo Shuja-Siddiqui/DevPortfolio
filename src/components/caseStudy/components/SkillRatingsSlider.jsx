@@ -22,9 +22,9 @@ export const SkillRatingsSlider = ({ icon, skillName, skillValue }) => {
 
   return (
     <div className="w-full flex justify-center items-center gap-5">
-      <div className="w-[5%] flex flex-col justify-start items-start gap-5">
+      {/* <div className="w-[5%] flex flex-col justify-start items-start gap-5">
         <img src={icon} alt={icon} />
-      </div>
+      </div> */}
       <div className="w-[95%] flex flex-col justify-start items-start gap-2">
         <h2 className="text-white text-[18px]">{skillName}</h2>
         <div

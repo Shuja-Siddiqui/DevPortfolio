@@ -24,6 +24,15 @@ export const ProfileParaSection = () => {
         <div className="w-full xl:w-[50%] flex justify-start items-center">
           <div className="w-full flex justify-start items-start flex-col">
             <Heading prefix={"I Craft The"} postfix={"Digital Landscape"} />
+            {/* <div className=" w-full flex justify-start items-start flex-col">
+      <h2 className="font-thin text-white xl:text-[2.2rem] lg:text-[2.2rem]md:text-[2.2rem] sm:text-[2.2rem] xs:text-[2.2rem] xss:text-[2.2rem]">
+        {prefix}{" "}<br/>
+        <span className="text-secondary font-bold">
+          {postfix}
+        </span>
+      </h2>
+      <p className="text-lg text-primary leading-6 mb-5">{description}</p>
+    </div> */}
             <div className=" flex flex-wrap mb-5 ">
               {/* <p className="w-full text-primary leading-6 text-sm flex flex-wrap">
                 I am a
@@ -36,8 +45,8 @@ export const ProfileParaSection = () => {
               </p>
             </div>
             <div className="w-full flex justify-start items-start mb-7">
-              <Features />
-              <Features />
+              <Features text="Available for Work" />
+              <Features text="Full Time Job" />
             </div>
             <button
               onClick={handleButtonClick}
@@ -57,12 +66,12 @@ export const ProfileParaSection = () => {
         </div>
       </div>
       <div className=" relative w-full flex mb-5">
-        <div className="hidden md:flex flex-col justify-start items-start  w-[15%] border-l-2 border-l-secondary">
+        <div className="hidden md:flex flex-col justify-start items-start  w-[17%] border-l-2 border-l-secondary">
           <p className="text-sm ml-2">Trusted</p>
 
-          <p className="text-sm ml-2">Companies</p>
+          <p className="text-sm ml-2">Technologies</p>
         </div>
-        <div className="w-[85%]">
+        <div className="w-[83%]">
           <Carousel />
         </div>
       </div>

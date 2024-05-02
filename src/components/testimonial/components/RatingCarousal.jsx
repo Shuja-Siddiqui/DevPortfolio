@@ -1,78 +1,48 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css"; // Import Swiper styles
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
-import client1 from "../../../assets/img/article1.png";
-import client2 from "../../../assets/img/article2.png";
 import { useData } from "../../../DataContext";
-
-const ratings = [
-  {
-    id: 1,
-    name: "John Doe",
-    comment: "Great service, highly recommended!",
-    rating: 5,
-    image: client1,
-    clientDesignation: "CEO Consoledot",
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    comment: "Excellent experience, will come again!",
-    rating: 4,
-    image: client2,
-    clientDesignation: "CEO Consoledot",
-  },
-  {
-    id: 3,
-    name: "Jane Smith",
-    comment: "Excellent experience, will come again!",
-    rating: 4,
-    image: client2,
-    clientDesignation: "CEO Consoledot",
-  },
-  {
-    id: 4,
-    name: "Jane Smith",
-    comment: "Excellent experience, will come again!",
-    rating: 4,
-    image: client2,
-    clientDesignation: "CEO Consoledot",
-  },
-];
+import "./RatingCarousel.css";
+import useMobileView from "../../../assets/hooks/useMobileView";
 
 export const RatingCarousal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const swiperRef = useRef(null);
+  const isMobile = useMobileView();
+  const { data } = useData();
+  const baseURL = process.env.REACT_APP_URL;
+
+  const testimonials = data?.testimonials || [];
 
   const goToPreviousSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? data?.testimonials?.length - 1 : prevIndex - 1
-    );
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
   };
 
   const goToNextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === data?.testimonials?.length - 1 ? 0 : prevIndex + 1
-    );
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
   };
-  const {data} =useData();
-  
-  const baseURL = process.env.REACT_APP_URL;
+
   return (
     <div className="w-full relative">
-      <div className="overflow-hidden w-full relative">
-        <div
-          className={`flex transition-transform duration-500 ease-in-out bg-transparent justify-center items-center py-4 px-8 ${
-            data?.testimonials?.length * 50
-          }% md:${data?.testimonials?.length * 25}%`}
-          style={{
-            transform: `translateX(-${currentIndex * 50}%)`,
-          }}
-        >
-          {data?.testimonials?.map((rating, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center space-x-4 p-7"
-              style={{ flex: "0 0 50%" }}
-            >
+      <Swiper
+        ref={swiperRef}
+        slidesPerView={isMobile ? 1 : 2} // Show two slides at a time
+        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+        navigation={{
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        }}
+      >
+        {testimonials.map((rating, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex flex-col items-center justify-center space-x-4 p-7">
+              {/* Need to add empty div to make image center */}
+              <div></div>
               <div
                 className="w-[100px] h-[100px] rounded-full"
                 style={{
@@ -94,43 +64,42 @@ export const RatingCarousal = () => {
                   />
                 ))}
               </div>
-              <div className="flex justify-center items-center flex-col gap-3">
-                <h2 className="text-white font-bold">{rating.clientName}</h2>
-                <p className="text-sm text-primary text-center">{rating.clientReview
-}</p>
-                <p className="text-sm text-gray-600">
-                  {rating.clientDesignation || 'CEO Consoledot'}
-                </p>
+              <div className="flex justify-center items-center flex-col">
+                <span className="text-sm md:text-[15px] text-[#999999] text-center">
+                  {rating.clientReview}
+                </span>
+                <div className="mt-5 text-center">
+                  <h6 className="text-white font-medium text-lg font-bold">
+                    {rating.clientName}
+                  </h6>
+                  <p className="text-sm text-[#999999]">
+                    {rating.clientDesignation || "CEO Consoledot"}
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-      <div className=" absolute bottom-[0] hidden  right-[42%] md:flex justify-between gap-7">
-        <button
-          onClick={goToPreviousSlide}
-          className="  z-10 p-2 bg-transparent rounded-full border border-night-black  text-white focus:outline-none"
-        >
-          <ArrowLeftIcon className="w-6 h-6" />
-        </button>
-
-        <button
-          onClick={goToNextSlide}
-          className="  z-10 p-2 bg-transparent rounded-full border border-night-black  text-white focus:outline-none"
-        >
-          <ArrowRightIcon className="w-6 h-6" />
-        </button>
-      </div>
-      <div className="  inset-x-0 flex  md:hidden justify-center space-x-2">
-        {data?.testimonials?.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full bg-gray-500 ${
-              index === currentIndex ? "bg-green" : ""
-            } focus:outline-none`}
-          ></button>
+          </SwiperSlide>
         ))}
+      </Swiper>
+      <div className="absolute inset-x-0 bottom-0 flex px-4 py-2">
+        <div className="w-full flex justify-center">
+          <button
+            onClick={goToPreviousSlide}
+            className="text-white bg-gray-800 hover:bg-gray-700 p-2 rounded-full md:ml-[35%] ml-[25%] swiper-button-prev"
+          >
+            <ArrowLeftIcon className="w-6 h-6" />
+          </button>
+          <span className="text-white">
+            <span className="text-success">{currentIndex + 1}</span>/
+            {testimonials.length}
+          </span>
+          <button
+            onClick={goToNextSlide}
+            className="text-white bg-gray-800 hover:bg-gray-700 p-2 rounded-full md:mr-[35%] mr-[25%] swiper-button-next"
+          >
+            <ArrowRightIcon className="w-6 h-6" />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useLocation } from "react-router-dom";
 import { useData } from "../DataContext";
 
-export const GeneralLayout = () => {
+export const GeneralLayout = ({ projectData }) => {
   const [address, setAddress] = useState("");
   const { data } = useData();
   const location = useLocation();
@@ -39,21 +39,20 @@ export const GeneralLayout = () => {
     setAddress(location?.pathname.split("/")[1]);
   }, [location]);
 
-    const centerDivRef = useRef(null);
-    const handleSideScroll = (e) => {
-      e.preventDefault();
-      if (centerDivRef.current) {
-        // Adjust the scroll speed by multiplying e.deltaY by a factor
-        // Increase the multiplier to make the scroll faster
-        const scrollSpeedMultiplier = 4; // Adjust this value as needed
-        centerDivRef.current.scrollTop += e.deltaY * scrollSpeedMultiplier;
-      }
+  const centerDivRef = useRef(null);
+  const handleSideScroll = (e) => {
+    e.preventDefault();
+    if (centerDivRef.current) {
+      // Adjust the scroll speed by multiplying e.deltaY by a factor
+      // Increase the multiplier to make the scroll faster
+      const scrollSpeedMultiplier = 4; // Adjust this value as needed
+      centerDivRef.current.scrollTop += e.deltaY * scrollSpeedMultiplier;
     }
+  };
   return (
     <div className="w-full gap-8 flex px-3 xl:px-5 lg:px-3 md:px-3 lg:flex-row flex-col justify-between items-start min-h-screen bg-[#18191A] mt-8 md:mt-0 ">
       {/* Leftmost column */}
       <div
-        
         className="w-full lg:mt-4  lg:w-[25%] sm:w-[50%] justify-center items-start overflow-y-auto "
         onWheel={handleSideScroll}
       >
@@ -61,17 +60,24 @@ export const GeneralLayout = () => {
       </div>
 
       {/* Center column */}
-      <div ref={centerDivRef} className="w-full h-full lg:w-[69%]   xl:px-7  px-4  3xl:mr-[23%] flex justify-center z-20 items-start lg:h-screen overflow-y-scroll bg-transparent 3xl:max-w-[900px] xl:ml-[0%]">
-        {address === "case-study" ? <CaseStudy /> : <CenterContent />}
+      <div
+        ref={centerDivRef}
+        className="w-full h-full lg:w-[69%]   xl:px-7  px-4  3xl:mr-[23%] flex justify-center z-20 items-start lg:h-screen overflow-y-scroll bg-transparent 3xl:max-w-[900px] xl:ml-[0%]"
+      >
+        {address === "case-study" ? (
+          <CaseStudy projectData={projectData} />
+        ) : (
+          <CenterContent />
+        )}
       </div>
 
       {/* Rightmost column (conditionally rendered) */}
       <div
-        className=" lg:flex hidden h-full lg:mt-4 flex  justify-center items-start  lg:max-w-sm" style={{zIndex:9999}}
+        className=" lg:flex hidden h-full lg:mt-4 flex  justify-center items-start  lg:max-w-sm"
+        style={{ zIndex: 9999 }}
         onWheel={handleSideScroll}
       >
         <DesktopNav />
-      
       </div>
       {/* <div className="absolute h-[10vh] right-2 top-5 border-t border-b border-l border-r- rounded-2xl rounded-tr-none rounded-br-none border-night-black p-3">
         <div >

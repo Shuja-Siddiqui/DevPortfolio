@@ -34,7 +34,7 @@ export const Skills = () => {
           </button>
         </div>
       </div>
-
+      
       <SkillsCarousal direction={direction} parentClick={handleClick} />
     </div>
   );

@@ -9,13 +9,12 @@ export const FeaturedProjects = () => {
   const baseUrl = process.env.REACT_APP_URL;
 
   // State to manage the number of projects to display
-  const [displayedProjects, setDisplayedProjects] = useState(1);
+  const [displayedProjects, setDisplayedProjects] = useState(3);
 
   // Handler for displaying more projects
   const handleMoreProjects = () => {
     setDisplayedProjects(data?.projects?.length);
   };
-
   // Handler for displaying fewer projects
   const handleLessProjects = () => {
     setDisplayedProjects(1);
@@ -35,12 +34,15 @@ export const FeaturedProjects = () => {
         <div className="w-full mb-6">
           {/* Mapping only for the first 'displayedProjects' */}
           {data?.projects?.slice(0, displayedProjects).map((project, index) => (
-            <ProjectCard
-              key={index}
-              data={project.gallery}
-              projectName={project.projectName}
-              id={index}
-            />
+            <>
+              <ProjectCard
+                key={index}
+                heroImage={project?.hero}
+                data={project?.gallery}
+                projectName={project?.projectName}
+                id={index}
+              />
+            </>
           ))}
         </div>
         <div className="w-full flex justify-center items-center">

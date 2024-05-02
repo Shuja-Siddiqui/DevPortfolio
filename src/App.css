@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -79,6 +79,7 @@ body {
 ::-webkit-scrollbar-track {
   background-color: #f1f1f1; /* Set the background color of the track */
 }
+
 
 @keyframes header {
   0% {
