@@ -17,11 +17,11 @@ export const FeaturedProjects = () => {
   };
   // Handler for displaying fewer projects
   const handleLessProjects = () => {
-    setDisplayedProjects(1);
+    setDisplayedProjects(3);
   };
 
   return (
-    <div className="w-full flex justify-start items-start flex-col xl:p-16 lg:p-16 md:p-16 sm:p-5 xs:p-5 xss:p-5 border-night-black bg-primaryDark rounded-xl mb-6">
+    <div className="w-full flex justify-start items-start flex-col xl:p-12 lg:p-12 md:p-12 sm:p-5 xs:p-5 xss:p-5 border-night-black bg-primaryDark rounded-xl">
       <div className="w-full flex justify-start items-start flex-col">
         <ButtonWithIcon Icon={ImStatsBars2} text={"Portfolio"} />
         <Heading
@@ -31,7 +31,7 @@ export const FeaturedProjects = () => {
             "I design products that are more than prettyI make them shippable and usable, ttempor non mollit dolor et do aute"
           }
         />
-        <div className="w-full mb-6">
+        <div className="w-full mb-4">
           {/* Mapping only for the first 'displayedProjects' */}
           {data?.projects?.slice(0, displayedProjects).map((project, index) => (
             <>
@@ -45,23 +45,25 @@ export const FeaturedProjects = () => {
             </>
           ))}
         </div>
-        <div className="w-full flex justify-center items-center">
-          {displayedProjects < data?.projects?.length ? (
-            <button
-              className="py-4 px-7 bg-secondary rounded-full"
-              onClick={handleMoreProjects}
-            >
-              More Projects
-            </button>
-          ) : (
-            <button
-              className="py-4 px-7 bg-secondary rounded-full"
-              onClick={handleLessProjects}
-            >
-              Less Projects
-            </button>
-          )}
-        </div>
+        {data?.projects?.length > 3 && (
+          <div className="w-full flex justify-center items-center">
+            {displayedProjects < data?.projects?.length ? (
+              <button
+                className="py-4 px-7 bg-secondary rounded-full"
+                onClick={handleMoreProjects}
+              >
+                More Projects
+              </button>
+            ) : (
+              <button
+                className="py-4 px-7 bg-secondary rounded-full"
+                onClick={handleLessProjects}
+              >
+                Less Projects
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

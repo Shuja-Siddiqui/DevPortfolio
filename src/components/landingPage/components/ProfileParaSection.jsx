@@ -9,6 +9,7 @@ import { useData } from "../../../DataContext";
 export const ProfileParaSection = () => {
   const { data } = useData();
   const baseURL = process.env.REACT_APP_URL;
+  console.log(data, "data2")
   const handleButtonClick = () => {
     const section = document.getElementById("contact");
     if (section) {
@@ -44,9 +45,9 @@ export const ProfileParaSection = () => {
                 {data?.intro}
               </p>
             </div>
-            <div className="w-full flex justify-start items-start mb-7">
+            <div className="w-full flex justify-start items-start mb-7 capitalize">
               <Features text="Available for Work" />
-              <Features text="Full Time Job" />
+              <Features text={data?.availability} />
             </div>
             <button
               onClick={handleButtonClick}

@@ -20,9 +20,9 @@ export const CaseStudy = ({ projectData }) => {
     <div className=" w-full flex justify-start items-start flex-col  p-7 border-night-black bg-primaryDark rounded-xl mb-6">
       <div className="w-full flex justify-start items-start flex-col">
         <ButtonWithIcon Icon={FcViewDetails} text={"Project Details"} />
-        {/* <h2 className="text-[20px] md:text-[30px] font-bold text-white mb-5 py-4">
+        <h2 className="text-[20px] md:text-[30px] font-bold text-white py-2">
           {projectData[id]?.thumbNail}
-        </h2> */}
+        </h2>
         <div className="w-full mb-4 py-4">
           <ProjectHerosSection data={newData} img={newData?.hero} />
         </div>

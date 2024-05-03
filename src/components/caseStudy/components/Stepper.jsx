@@ -15,9 +15,9 @@ export const Stepper = () => {
 
   return (
     <div className="w-full gap-4">
-      <div className="p-4 w-full">
-        <div className="text-4xl font-bold mb-4 text-secondary flex gap-1 items-baseline justify-start">
-          Description:
+      <div className="py-2 w-full">
+        <div className="text-2xl font-bold mb-4 text-white flex gap-1 items-baseline justify-start">
+         Project Description:
         </div>
         <div
           className="text-sm text-primary"

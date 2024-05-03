@@ -58,15 +58,24 @@ export const ProfileIntroLeftSide = () => {
       <div className="absolute z-20 w-[320px] h-[50px] right-[40px] top-[-106px] rotate-45  bg-[#18191A]"></div>
       <div className="flex  w-full flex-col justify-start items-center gap-3 p-1 pt-12">
         <div
+          className="rounded-full relative border-8 border-night-black flex justify-center items-center"
           style={{
-            backgroundImage: `url(${baseURL}/file/${data?.avatar})`, // Add your image URL here
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
             width: "130px",
             height: "130px",
           }}
-          className="rounded-full relative border-8 border-night-black"
-        ></div>
+        >
+          <img
+            src={`${baseURL}/file/${data?.avatar}`}
+            alt="Avatar"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain", // Ensure the image covers the entire space
+              borderRadius: "50%",
+            }}
+          />
+        </div>
+
         <div className="w-full flex justify-start items-center flex-col gap-3 min-h-[50px]">
           <h4 className="font-bold">{data?.name}</h4>
           <div id="typed-strings">

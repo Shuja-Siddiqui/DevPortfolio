@@ -40,7 +40,7 @@ export const RatingCarousal = () => {
       >
         {testimonials.map((rating, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center justify-center space-x-4 p-7">
+            <div className="flex flex-col items-center justify-center space-x-4 p-7 mb-6" >
               {/* Need to add empty div to make image center */}
               <div></div>
               <div
@@ -73,7 +73,7 @@ export const RatingCarousal = () => {
                     {rating.clientName}
                   </h6>
                   <p className="text-sm text-[#999999]">
-                    {rating.clientDesignation || "CEO Consoledot"}
+                    {rating.clientDesignation}
                   </p>
                 </div>
               </div>
