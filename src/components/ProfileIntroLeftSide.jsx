@@ -5,6 +5,9 @@ import { FaDownload } from "react-icons/fa";
 import Typed from "typed.js";
 import { useData } from "../DataContext";
 import { AiOutlineCloudDownload } from "react-icons/ai";
+import { FaGithub } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
 import { useMediaQuery } from "react-responsive";
 
 import { DoughnutLeft } from "./charts/DoughnutLeft";
@@ -47,6 +50,8 @@ export const ProfileIntroLeftSide = () => {
     // Open the PDF in a new tab for the user to download
     window.open(pdfUrl, "_blank");
   };
+
+  console.log("data", data);
   return (
     <div
       style={{
@@ -120,7 +125,7 @@ export const ProfileIntroLeftSide = () => {
         <div className="card w-full bg-[#333] shadow-xl mb-5">
           <div style={{ paddingTop: "1rem" }} className="px-[2rem]">
             <h2 style={{ fontSize: "0.875rem" }} className="">
-              Skills!
+              Links!
             </h2>
           </div>
           <div
@@ -128,17 +133,28 @@ export const ProfileIntroLeftSide = () => {
             className="card-body flex-row py-0"
           >
             <div className="w-full grid grid-cols-4 lg:grid-row-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-3 place-content-between text-center mb-5 overflow-hidden">
-              {data?.skills?.map((i) => (
-                <DoughnutLeft
-                  cutout={"95"}
-                  height={"60"}
-                  width={"60"}
-                  skillRate={i?.ratings}
-                  skillName={i?.title?.skillName}
-                />
+              {data?.links?.map((i) => (
+                // <DoughnutLeft
+                //   cutout={"95"}
+                //   height={"60"}
+                //   width={"60"}
+                //   skillRate={i?.ratings}
+                //   skillName={i?.title?.skillName}
+                // />
+                <div className="flex flex-col">
+                  {i?.title === "github" ? (
+                    <FaGithub size={"36px"} />
+                  ) : i?.title === "facebook" ? (
+                    <FaFacebookF size={"36px"} />
+                  ) : i?.title === "linkedin" ? (
+                    <FaLinkedinIn size={"36px"} />
+                  ) : (
+                    <></>
+                  )}
+                </div>
               ))}
             </div>
-            <div className="w-full flex justify-between items-center gap-4 mb-5 overflow-hidden">
+            {/* <div className="w-full flex justify-between items-center gap-4 mb-5 overflow-hidden">
               {data?.skills?.map((i, index) => (
                 <div key={index} className="flex justify-center">
                   <DoughnutLeft
@@ -150,7 +166,7 @@ export const ProfileIntroLeftSide = () => {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
