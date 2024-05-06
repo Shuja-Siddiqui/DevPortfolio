@@ -128,7 +128,7 @@ export const ProfileIntroLeftSide = () => {
         <div className="card w-full bg-[#333] shadow-xl mb-5">
           <div style={{ paddingTop: "1rem" }} className="px-[2rem]">
             <h2 style={{ fontSize: "0.875rem" }} className="">
-              Links!
+              Social Links!
             </h2>
           </div>
           <div
