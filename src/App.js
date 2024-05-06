@@ -29,7 +29,7 @@ function App() {
   }, [id]);
   return (
     <div className="w-full h-screen bg-primaryLight dark:bg-[#191923]">
-      <div className="w-full lg:hidden flex bg-transparent min-h-[70px] fixed top-0 z-50">
+      <div className="w-full xl:hidden lg:flex 2lg:flex 3md:flex flex bg-transparent min-h-[70px] fixed top-0 z-50">
         <MobileNav />
       </div>
       {/* <CustomCursor /> */}

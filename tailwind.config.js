@@ -12,8 +12,14 @@ module.exports = {
       md: "768px",
       // => @media (min-width: 768px) { ... }
 
+      "2md": "992px",
+
+      "3md": "850px",
+
       lg: "1024px",
       // => @media (min-width: 1024px) { ... }
+
+      "2lg": "1163px",
 
       xl: "1280px",
       // => @media (min-width: 1280px) { ... }
@@ -22,7 +28,6 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
       "3xl": "1868px",
       // => @media (min-width: 1536px) { ... }
-     
     },
     extend: {
       colors: {

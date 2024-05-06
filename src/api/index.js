@@ -10,5 +10,17 @@ const instance = axios.create({
     // Add other default headers if needed
   },
 });
+const baseURL = "http://localhost:5000/api/v1";
+
+export const sendMail = async (data) => {
+  try {
+    const response = await axios.post(`${baseURL}/mail`, data);
+    if (response) {
+      return response;
+    }
+  } catch (error) {
+    console.log("Error occured", error?.message);
+  }
+};
 
 export default instance;

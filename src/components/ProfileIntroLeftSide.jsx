@@ -5,10 +5,12 @@ import { FaDownload } from "react-icons/fa";
 import Typed from "typed.js";
 import { useData } from "../DataContext";
 import { AiOutlineCloudDownload } from "react-icons/ai";
+import { useMediaQuery } from "react-responsive";
 
 import { DoughnutLeft } from "./charts/DoughnutLeft";
 export const ProfileIntroLeftSide = () => {
   const [divHeight, setDivHeight] = useState("auto");
+  const isXLargeScreen = useMediaQuery({ minWidth: 1200, maxWidth: 1300 });
 
   useEffect(() => {
     const typed = new Typed("#typed", {
@@ -49,14 +51,15 @@ export const ProfileIntroLeftSide = () => {
     <div
       style={{
         // height: divHeight
-        top: divHeight,
+        // top: divHeight,
+        ...(isXLargeScreen ? {} : { top: divHeight }),
       }}
-      className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-4 overflow-hidden xl:fixed lg:fixed md:fixed sm:relative xs:relative md:max-w-[21rem]"
+      className="w-full z-20 rounded-2xl bg-primaryDark flex justify-center items-center p-4 overflow-hidden xl:fixed lg:relative 2lg:relative 3md:relative md:fixed sm:relative xs:relative md:max-w-[21rem] lg:left-[35%] 2lg:left-[35%] 3md:left-[35%] xl:left-0 xl:top-[-47px]"
     >
       <div className="absolute z-20 w-[320px] lg:w-[320px] md:w-[320px] sm:w-[100px] xs:w-[100px] xss:w-[100px] h-[100px] xl:-right-[215px] lg:-right-[215px] md:-right-[215px] sm:right-[15px] xs:right-[15px] xss:right-[5px] top-[-50px] bg-[#18191A] overflow-hidden"></div>
 
       <div className="absolute z-20 w-[320px] h-[50px] right-[40px] top-[-106px] rotate-45  bg-[#18191A]"></div>
-      <div className="flex  w-full flex-col justify-start items-center gap-3 p-1 pt-12">
+      <div className="flex  w-full flex-col justify-start items-center xl:gap-1 lg:gap-3 md:gap-3 xs:gap-3 p-1 pt-12">
         <div
           className="rounded-full relative border-8 border-night-black flex justify-center items-center"
           style={{
@@ -114,12 +117,17 @@ export const ProfileIntroLeftSide = () => {
             <p className="text-primary text-sm">{data?.age}</p>
           </div>
         </div>
-        {/* <div className="card w-full bg-[#333] shadow-xl mb-5">
-          <div style={{ paddingTop: "1rem" }} className="card-body">
-            <h2 style={{ fontSize: "0.875rem" }} className="card-title">
+        <div className="card w-full bg-[#333] shadow-xl mb-5">
+          <div style={{ paddingTop: "1rem" }} className="px-[2rem]">
+            <h2 style={{ fontSize: "0.875rem" }} className="">
               Skills!
             </h2>
-            <div className="w-full grid grid-cols-4 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-3 place-content-between text-center mb-5 overflow-hidden">
+          </div>
+          <div
+            style={{ paddingTop: "1rem" }}
+            className="card-body flex-row py-0"
+          >
+            <div className="w-full grid grid-cols-4 lg:grid-row-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-3 place-content-between text-center mb-5 overflow-hidden">
               {data?.skills?.map((i) => (
                 <DoughnutLeft
                   cutout={"95"}
@@ -144,7 +152,7 @@ export const ProfileIntroLeftSide = () => {
               ))}
             </div>
           </div>
-        </div> */}
+        </div>
 
         <button
           className="w-full flex justify-center uppercase items-center bg-secondary py-4 font-bold px-5 rounded-full"

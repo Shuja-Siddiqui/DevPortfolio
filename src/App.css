@@ -80,7 +80,6 @@ body {
   background-color: #f1f1f1; /* Set the background color of the track */
 }
 
-
 @keyframes header {
   0% {
     transform: translateY(-30px);
@@ -90,4 +89,12 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.customToast {
+  background-color: #069c7a; /* Green color */
+  color: #fff; /* White text */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
