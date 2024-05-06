@@ -13,7 +13,7 @@ export const Skills = () => {
   return (
     <div className="w-full flex justify-start items-start flex-col xl:px-16 lg:px-16 md:px-16 sm:px-5 xs:px-5 xss:px-5 py-5 relative">
       <ButtonWithIcon Icon={FaGraduationCap} text={"Skills"} />
-      <Heading prefix={"My"} postfix={"Adventages"} />
+      <Heading prefix={"My"} postfix={"Advantages"} />
       <p className="text-md text-primary leading-6 mb-5">
         I design products that are more than pretty. I make them shippable and
         usable, tempor non mollit dolor et do aute

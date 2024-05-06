@@ -11,6 +11,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { useMediaQuery } from "react-responsive";
 
 import { DoughnutLeft } from "./charts/DoughnutLeft";
+import { useNavigate } from "react-router-dom";
 export const ProfileIntroLeftSide = () => {
   const [divHeight, setDivHeight] = useState("auto");
   const isXLargeScreen = useMediaQuery({ minWidth: 1200, maxWidth: 1300 });
@@ -46,10 +47,12 @@ export const ProfileIntroLeftSide = () => {
   const handleDownload = () => {
     // Replace 'YOUR_GOOGLE_DRIVE_LINK_HERE' with the sharing link of your PDF file
     const pdfUrl =
-      "https://drive.google.com/file/d/1hIDKI2EvHu_LGLe6Jh9XfiafLXzD_Ty1/view?usp=drive_link";
+      "https://drive.google.com/file/d/1z__kIgheGUzQdBRp_dbCDnY7zmIsEf2f/view?usp=drive_link";
     // Open the PDF in a new tab for the user to download
     window.open(pdfUrl, "_blank");
   };
+
+  const navigate = useNavigate();
 
   console.log("data", data);
   return (
@@ -142,12 +145,14 @@ export const ProfileIntroLeftSide = () => {
                 //   skillName={i?.title?.skillName}
                 // />
                 <div className="flex flex-col">
-                  {i?.title === "github" ? (
-                    <FaGithub size={"36px"} />
-                  ) : i?.title === "facebook" ? (
-                    <FaFacebookF size={"36px"} />
-                  ) : i?.title === "linkedin" ? (
-                    <FaLinkedinIn size={"36px"} />
+                  {i?.title.toLowerCase() === "github" ? (
+                    <a href={i?.url} target="_blank">
+                      <FaGithub size={"30px"} />
+                    </a>
+                  ) : i?.title.toLowerCase() === "facebook" ? (
+                    <FaFacebookF size={"30px"} />
+                  ) : i?.title.toLowerCase() === "linkedin" ? (
+                    <FaLinkedinIn size={"30px"} />
                   ) : (
                     <></>
                   )}

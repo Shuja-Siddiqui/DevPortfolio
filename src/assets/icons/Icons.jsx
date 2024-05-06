@@ -23,5 +23,6 @@ export const softwareHouseTechnologies = [
   { name: "Firebase", icon: <DiDotnet /> },
   { name: "MongoDB", icon: <DiDotnet /> },
   { name: "Django", icon: <DiDotnet /> },
+  { name: "MONGO", icon: <DiDotnet /> },
   // Add more technologies used by the software house
 ];

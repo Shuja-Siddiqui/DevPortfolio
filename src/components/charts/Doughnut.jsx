@@ -105,7 +105,7 @@ export const Doughnut = ({
           {count}%
         </p>
       </div>
-      <h1 style={{ fontSize: "18px", fontWeight: "lighter" }}>
+      <h1 style={{ fontSize: "18px", fontWeight: "lighter" }} className="capitalize">
         {skillName}
       </h1>
     </div>
