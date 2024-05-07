@@ -45,11 +45,13 @@ export const ContectMe = () => {
           </span>
           <span className="flex-[0_0_2rem]">:</span>
           <div className="w-full md:w-[100%] flex flex-wrap">
-            {data?.languages?.map((i) => (
+            {data?.languages?.map((i, index) => (
               <span
                 key={i}
                 className="w-auto mr-2 text-md text-white capitalize"
-              >{`${i},`}</span>
+              >
+                {`${i}${index !== data.languages.length - 1 ? "," : "."}`}
+              </span>
             ))}
           </div>
         </li>

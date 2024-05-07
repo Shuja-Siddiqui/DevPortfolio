@@ -2,7 +2,7 @@ import React from "react";
 import { NumberWithSubHead } from "./NumberWithSubHead";
 const contactData = [
   {
-    key: "185",
+    key: "6",
     value: "Years Of Experience",
   },
   {
