@@ -6,7 +6,7 @@ import Typed from "typed.js";
 import { useData } from "../DataContext";
 import { AiOutlineCloudDownload } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa6";
-import { FaFacebookF } from "react-icons/fa";
+import { FaStackOverflow  } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { useMediaQuery } from "react-responsive";
 
@@ -149,8 +149,8 @@ export const ProfileIntroLeftSide = () => {
                     <a href={i?.url} target="_blank">
                       <FaGithub size={"30px"} />
                     </a>
-                  ) : i?.title.toLowerCase() === "facebook" ? (
-                    <FaFacebookF size={"30px"} />
+                  ) : i?.title.toLowerCase() === "stackoverflow" ? (
+                    <FaStackOverflow  size={"30px"} />
                   ) : i?.title.toLowerCase() === "linkedin" ? (
                     <FaLinkedinIn size={"30px"} />
                   ) : (
