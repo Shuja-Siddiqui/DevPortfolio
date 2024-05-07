@@ -24,7 +24,7 @@ export const ContectMe = () => {
         <li className="flex items-center">
           <span className="flex-[0_0_6rem] text-primary font-bold">Email</span>
           <span className="flex-[0_0_2rem]">:</span>
-          <span className="text-white">{data?.email}</span>
+          <span className="text-white break-all overflow-hidden">{data?.email}</span>
         </li>
 
         <li className="flex items-center">
