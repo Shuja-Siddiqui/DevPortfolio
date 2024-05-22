@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 export const ProjectCard = ({ data, projectName, id, heroImage }) => {
   const navigate = useNavigate();
   const baseURL = process.env.REACT_APP_URL;
-  console.log(id, "ggggggggg");
 
   return (
     <div className="w-full flex flex-col justify-center items-center gap-5">
