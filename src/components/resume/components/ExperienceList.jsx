@@ -17,8 +17,20 @@ export const ExperienceList = () => {
     if (aIsCurrent && !bIsCurrent) return -1;
     if (!aIsCurrent && bIsCurrent) return 1;
 
-    // Otherwise, sort by start year in descending order
-    return parseInt(b.timeSpan.startYear) - parseInt(a.timeSpan.startYear);
+    // If start years are different, sort by start year in descending order
+    if (a.timeSpan.startYear !== b.timeSpan.startYear) {
+      return parseInt(b.timeSpan.startYear) - parseInt(a.timeSpan.startYear);
+    }
+
+    // If start years are the same, sort by end year
+    if (a.timeSpan.endYear !== b.timeSpan.endYear) {
+      // Handle "current" in end year by prioritizing it
+      if (a.timeSpan.endYear.toLowerCase() === currentYearString) return -1;
+      if (b.timeSpan.endYear.toLowerCase() === currentYearString) return 1;
+      return parseInt(b.timeSpan.endYear) - parseInt(a.timeSpan.endYear);
+    }
+
+    return 0;
   });
 
   return (
