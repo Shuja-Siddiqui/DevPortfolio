@@ -1,42 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useData } from "../../../DataContext";
 
 export const ExperienceList = () => {
+  const [sortedData, setSortedData] = useState([]);
   const { data } = useData();
-  
-  // Get the current year as a string for comparison
-  const currentYearString = "current";
 
-  // Sort the experiences
-  const sortedExperience = data?.experience?.slice().sort((a, b) => {
-    // Check if any of the experiences have "current" as their end year
-    const aIsCurrent = a.timeSpan.endYear.toLowerCase() === currentYearString;
-    const bIsCurrent = b.timeSpan.endYear.toLowerCase() === currentYearString;
+  useEffect(() => {
+    if (data) {
+      const sorted = [...data?.experience].sort((a, b) => {
+        const endYearA =
+          a.timeSpan.endYear === "Current"
+            ? Infinity
+            : parseInt(a.timeSpan.endYear, 10);
+        const endYearB =
+          b.timeSpan.endYear === "Current"
+            ? Infinity
+            : parseInt(b.timeSpan.endYear, 10);
 
-    // If one of the experiences is current, prioritize it
-    if (aIsCurrent && !bIsCurrent) return -1;
-    if (!aIsCurrent && bIsCurrent) return 1;
-
-    // If start years are different, sort by start year in descending order
-    if (a.timeSpan.startYear !== b.timeSpan.startYear) {
-      return parseInt(b.timeSpan.startYear) - parseInt(a.timeSpan.startYear);
+        if (endYearA !== endYearB) {
+          return endYearB - endYearA;
+        } else {
+          return b.timeSpan.startYear - a.timeSpan.startYear;
+        }
+      });
+      setSortedData(sorted);
     }
-
-    // If start years are the same, sort by end year
-    if (a.timeSpan.endYear !== b.timeSpan.endYear) {
-      // Handle "current" in end year by prioritizing it
-      if (a.timeSpan.endYear.toLowerCase() === currentYearString) return -1;
-      if (b.timeSpan.endYear.toLowerCase() === currentYearString) return 1;
-      return parseInt(b.timeSpan.endYear) - parseInt(a.timeSpan.endYear);
-    }
-
-    return 0;
-  });
+  }, [data]);
 
   return (
     <div className="">
       <ul className="space-y-5 md:space-y-11 relative md:before:content-[''] md:before:absolute lg:before:left-64 lg:before:border-r lg:before:border-[#3b3b3b] lg:dark:before:border-night-black md:before:h-[calc(100%_-1.5rem)] md:before:top-1/2 md:before:-translate-y-1/2">
-        {sortedExperience?.map((obj, index) => (
+        {sortedData?.map((obj, index) => (
           <li
             key={index}
             className="p-5 border rounded-xl relative md:flex max-md:space-y-2 border-[$] dark:border-night-black md:border-0 md:p-0 md:rounded-none"
