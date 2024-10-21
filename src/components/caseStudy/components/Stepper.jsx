@@ -10,14 +10,14 @@ export const Stepper = () => {
   const id = location.pathname.split("/")[2];
   const { data } = useData();
   const sanitizedDescription = DOMPurify.sanitize(
-    data?.projects?.[id]?.description
+    data?.projects.find((i) => i?.projectName === id)?.description || ""
   );
 
   return (
     <div className="w-full gap-4">
       <div className="py-2 w-full">
         <div className="text-2xl font-bold mb-4 text-white flex gap-1 items-baseline justify-start">
-         Project Description:
+          Project Description:
         </div>
         <div
           className="text-sm text-primary"
